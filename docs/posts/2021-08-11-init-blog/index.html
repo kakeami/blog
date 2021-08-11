@@ -246,7 +246,13 @@ GitHub Pages向けに<code>publishDir</code>は<code>&quot;docs&quot;</code>に�
 <h2 id="github-pages">GitHub Pages</h2>
 <h2 id="デプロイ用スクリプト">デプロイ用スクリプト</h2>
 <p>毎回<code>hugo</code>とタイプするのが面倒だったので，<code>push</code>までまとめて実行する<code>publish.sh</code>を作った．</p>
-<h1 id="感想">感想</h1>
+<pre><code>#!/bin/sh
+
+hugo
+git add . -A
+git commit -m &quot;$1&quot;
+git push origin master
+</code></pre><h1 id="感想">感想</h1>
 <p>以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的ブログを構築したことがあったが，遥かに高速にビルドできてとても快適．</p>
 <h1 id="今後の課題">今後の課題</h1>
 <ul>
