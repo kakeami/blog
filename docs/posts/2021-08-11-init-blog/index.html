@@ -51,8 +51,10 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugoで静的ブログを始めてみた"/>
-<meta name="twitter:description" content="zenn.devに書くほどでもない個人的なメモを保存するために，Hugo &#43; GitHub Pagesで静的ブログを始めました．
-作り方 Hugo GitHub Pages 感想 以前Jekyllで静的ブログを構築したことがありましたが，これより遥かに高速にビルドできて快適です．
+<meta name="twitter:description" content="zenn.devに書くほどでもない個人的なメモを保存するために，Hugo &#43; GitHub Pagesで静的ブログを始めた． Hugoを選んだ理由は特にない． 強いて言えばGolangを触ってみたかったから．
+作り方 環境 Hugo brew install hugo kakeami.github.ioは他のことに使いたかったので，blogリポジトリにデプロイすることにした．
+hugo new site blog Harbor https://github.com/matsuyoshi30/harborがシンプルでとても良かったので拝借することにした．
+cd themes git submodule add https://github.com/matsuyoshi30/harbor.git harbor GitHub Pages 感想 以前Jekyllで静的ブログを構築したことがあったが，遥かに高速にビルドできてとても快適．
 今後の課題  タイトルのフォントサイズの調整 日本語全文検索 アーカイブ  参考  Hugo &#43; GitHub Pages（独自ドメイン適応）でサイトを作成・公開する https://github.com/matsuyoshi30/harbor  "/>
 
 
@@ -149,12 +151,22 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p>zenn.devに書くほどでもない個人的なメモを保存するために，Hugo + GitHub Pagesで静的ブログを始めました．</p>
+  <p>zenn.devに書くほどでもない個人的なメモを保存するために，Hugo + GitHub Pagesで静的ブログを始めた．
+Hugoを選んだ理由は特にない．
+強いて言えばGolangを触ってみたかったから．</p>
 <h1 id="作り方">作り方</h1>
+<h2 id="環境">環境</h2>
 <h2 id="hugo">Hugo</h2>
-<h2 id="github-pages">GitHub Pages</h2>
+<pre><code>brew install hugo
+</code></pre><p><code>kakeami.github.io</code>は他のことに使いたかったので，<code>blog</code>リポジトリにデプロイすることにした．</p>
+<pre><code>hugo new site blog
+</code></pre><h2 id="harbor">Harbor</h2>
+<p><a href="https://github.com/matsuyoshi30/harbor">https://github.com/matsuyoshi30/harbor</a>がシンプルでとても良かったので拝借することにした．</p>
+<pre><code>cd themes
+git submodule add https://github.com/matsuyoshi30/harbor.git harbor
+</code></pre><h2 id="github-pages">GitHub Pages</h2>
 <h1 id="感想">感想</h1>
-<p>以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的ブログを構築したことがありましたが，これより遥かに高速にビルドできて快適です．</p>
+<p>以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的ブログを構築したことがあったが，遥かに高速にビルドできてとても快適．</p>
 <h1 id="今後の課題">今後の課題</h1>
 <ul>
 <li>タイトルのフォントサイズの調整</li>
