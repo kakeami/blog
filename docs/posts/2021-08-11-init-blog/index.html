@@ -52,10 +52,10 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugoで静的ブログを始めてみた"/>
 <meta name="twitter:description" content="zenn.devに書くほどでもない個人的なメモを保存するために，Hugo &#43; GitHub Pagesで静的ブログを始めた． Hugoを選んだ理由は特にない． 強いて言えばGolangを触ってみたかったから．
-作り方 環境 Hugo brew install hugo kakeami.github.ioは他のことに使いたかったので，blogリポジトリにデプロイすることにした．
+作り方 環境  macOS 10.15.7  Hugo brew install hugo kakeami.github.ioは他のことに使いたかったので，blogリポジトリにデプロイすることにした．
 hugo new site blog Harbor https://github.com/matsuyoshi30/harborがシンプルでとても良かったので拝借することにした．
-cd themes git submodule add https://github.com/matsuyoshi30/harbor.git harbor GitHub Pages 感想 以前Jekyllで静的ブログを構築したことがあったが，遥かに高速にビルドできてとても快適．
-今後の課題  タイトルのフォントサイズの調整 日本語全文検索 アーカイブ  参考  Hugo &#43; GitHub Pages（独自ドメイン適応）でサイトを作成・公開する https://github.com/matsuyoshi30/harbor  "/>
+cd themes git submodule add https://github.com/matsuyoshi30/harbor.git harbor 公式のconfig.tomlから少しだけ修正した．
+theme = &quot;harbor&quot; baseurl = &quot;https://kakeami.github.io/blog/&quot; title = &quot;Amiblog&quot; paginate = 3 languageCode = &quot;jp&quot; DefaultContentLanguage = &quot;jp&quot; enableInlineShortcodes = true footnoteReturnLinkContents = &quot;^&quot; publishDir = &quot;docs&quot; # Optional # If you use googleAnalytics, you set top-level options in config."/>
 
 
 
@@ -156,6 +156,9 @@ Hugoを選んだ理由は特にない．
 強いて言えばGolangを触ってみたかったから．</p>
 <h1 id="作り方">作り方</h1>
 <h2 id="環境">環境</h2>
+<ul>
+<li>macOS 10.15.7</li>
+</ul>
 <h2 id="hugo">Hugo</h2>
 <pre><code>brew install hugo
 </code></pre><p><code>kakeami.github.io</code>は他のことに使いたかったので，<code>blog</code>リポジトリにデプロイすることにした．</p>
@@ -164,7 +167,89 @@ Hugoを選んだ理由は特にない．
 <p><a href="https://github.com/matsuyoshi30/harbor">https://github.com/matsuyoshi30/harbor</a>がシンプルでとても良かったので拝借することにした．</p>
 <pre><code>cd themes
 git submodule add https://github.com/matsuyoshi30/harbor.git harbor
-</code></pre><h2 id="github-pages">GitHub Pages</h2>
+</code></pre><p>公式の<code>config.toml</code>から少しだけ修正した．</p>
+<pre><code>theme = &quot;harbor&quot;
+baseurl = &quot;https://kakeami.github.io/blog/&quot;
+title = &quot;Amiblog&quot;
+paginate = 3
+languageCode = &quot;jp&quot;
+DefaultContentLanguage = &quot;jp&quot;
+enableInlineShortcodes = true
+footnoteReturnLinkContents = &quot;^&quot;
+publishDir = &quot;docs&quot;
+
+# Optional
+# If you use googleAnalytics, you set top-level options in config.toml to the beginning of the config file like other top-level options.
+googleAnalytics = &quot;UA-XXXXXXXX-XX&quot;
+# and disqus too.
+disqusShortName = &quot;yourdisqusshortname&quot;
+
+[params.goatcounter]
+  domain=&quot;stats.domain.com&quot;
+
+[params.matomo]
+  domain=&quot;stats.domain.com&quot;
+  id=&quot;123&quot;
+
+[Author]
+  name = &quot;kakeami&quot;
+
+[outputs]
+  section = [&quot;JSON&quot;, &quot;HTML&quot;]
+
+[[params.nav]]
+  identifier = &quot;about&quot;
+  name = &quot;About&quot;
+  icon = &quot;fas fa-user fa-lg&quot;
+  url = &quot;/about/&quot;
+  weight = 3
+
+[[params.nav]]
+  identifier = &quot;tags&quot;
+  name = &quot;Tags&quot;
+  icon = &quot;fas fa-tag fa-lg&quot;
+  url = &quot;tags&quot;
+  weight = 3
+
+[[params.nav]]
+  identifier = &quot;categories&quot;
+  name = &quot;Category&quot;
+  icon = &quot;fas fa-folder-open fa-lg&quot;
+  url = &quot;categories&quot;
+  weight = 3
+
+#[[params.nav]]
+#  identifier = &quot;search&quot;
+#  name = &quot;Search&quot;
+#  icon = &quot;fas fa-search fa-lg&quot;
+#  url = &quot;search&quot;
+#  weight = 3
+
+#[[params.nav]]
+#  identifier = &quot;archives&quot;
+#  name = &quot;Archives&quot;
+#  icon = &quot;fas fa-archive fa-lg&quot;
+#  url = &quot;archives&quot;
+#  weight = 3
+
+# copy paste this block and change for each social media to add how many ever social media
+# acounts/links you want
+[[params.social]]
+  name=&quot;name of social media&quot;
+  url=&quot;link to social media&quot;
+  icon=&quot;A icon from https://fontawesome.com/&quot;
+
+[params.logo]
+  url = &quot;icon.png&quot; # static/images/icon.png
+  width = 50
+  height = 50
+  alt = &quot;Logo&quot;
+</code></pre><p>当面は日本語で書きたかったので<code>languageCode</code>等は<code>jp</code>にした．
+GitHub Pages向けに<code>publishDir</code>は<code>&quot;docs&quot;</code>にした．</p>
+<p><code>search</code>および<code>archives</code>は自分のデフォルト環境では意図通り動作しなかったため，一旦コメントアウトしておいた．</p>
+<h2 id="github-pages">GitHub Pages</h2>
+<h2 id="デプロイ用スクリプト">デプロイ用スクリプト</h2>
+<p>毎回<code>hugo</code>とタイプするのが面倒だったので，<code>push</code>までまとめて実行する<code>publish.sh</code>を作った．</p>
 <h1 id="感想">感想</h1>
 <p>以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的ブログを構築したことがあったが，遥かに高速にビルドできてとても快適．</p>
 <h1 id="今後の課題">今後の課題</h1>

@@ -159,6 +159,15 @@
   </a>
   <div class="post-entry">
     
+      <p>zenn.devに書くほどでもない個人的なメモを保存するために，Hugo + GitHub Pagesで静的ブログを始めた． Hugoを選んだ理由は特にない． 強いて言えばGolangを触ってみたかったから．
+作り方 環境  macOS 10.15.7  Hugo brew install hugo kakeami.github.ioは他のことに使いたかったので，blogリポジトリにデプロイすることにした．
+hugo new site blog Harbor https://github.com/matsuyoshi30/harborがシンプルでとても良かったので拝借することにした．
+cd themes git submodule add https://github.com/matsuyoshi30/harbor.git harbor 公式のconfig.tomlから少しだけ修正した．
+theme = &quot;harbor&quot; baseurl = &quot;https://kakeami.github.io/blog/&quot; title = &quot;Amiblog&quot; paginate = 3 languageCode = &quot;jp&quot; DefaultContentLanguage = &quot;jp&quot; enableInlineShortcodes = true footnoteReturnLinkContents = &quot;^&quot; publishDir = &quot;docs&quot; # Optional # If you use googleAnalytics, you set top-level options in config.</p>
+      <a href="https://kakeami.github.io/blog/posts/2021-08-11-init-blog/" class="post-read-more"
+        ></a
+      >
+    
   </div>
 
   <div class="postmeta">
