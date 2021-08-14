@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>github pages on Amiblog</title>
+		<title>GitHub Pages on Amiblog</title>
 		<link>https://kakeami.github.io/blog/tags/github-pages/</link>
-		<description>Recent content in github pages </description>
+		<description>Recent content in GitHub Pages </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>jp</language>

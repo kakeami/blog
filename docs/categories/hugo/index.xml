@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Hugo on Amiblog</title>
-		<link>https://kakeami.github.io/blog/tags/hugo/</link>
+		<link>https://kakeami.github.io/blog/categories/hugo/</link>
 		<description>Recent content in Hugo </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>jp</language>
 		
-		<managingEditor>Page(/tags/hugo) (kakeami)</managingEditor>
+		<managingEditor>Page(/categories/hugo) (kakeami)</managingEditor>
     	
   		<lastBuildDate>Wed, 11 Aug 2021 22:35:56 +0900</lastBuildDate>
 		
-		<atom:link href="/blog/tags/hugo/" rel="self" type="application/rss+xml" />
+		<atom:link href="/blog/categories/hugo/" rel="self" type="application/rss+xml" />
 		
 	</channel>
 </rss>

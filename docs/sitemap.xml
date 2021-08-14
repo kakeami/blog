@@ -5,10 +5,19 @@
     <loc>https://kakeami.github.io/blog/</loc>
     <lastmod>2021-08-11T22:35:56+09:00</lastmod>
   </url><url>
+    <loc>https://kakeami.github.io/blog/tags/blog/</loc>
+    <lastmod>2021-08-11T22:35:56+09:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/categories/</loc>
+    <lastmod>2021-08-11T22:35:56+09:00</lastmod>
+  </url><url>
     <loc>https://kakeami.github.io/blog/tags/github-pages/</loc>
     <lastmod>2021-08-11T22:35:56+09:00</lastmod>
   </url><url>
     <loc>https://kakeami.github.io/blog/tags/hugo/</loc>
+    <lastmod>2021-08-11T22:35:56+09:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/categories/hugo/</loc>
     <lastmod>2021-08-11T22:35:56+09:00</lastmod>
   </url><url>
     <loc>https://kakeami.github.io/blog/posts/2021-08-11-init-blog/</loc>
@@ -24,7 +33,5 @@
     <lastmod>2021-08-11T22:31:47+09:00</lastmod>
   </url><url>
     <loc>https://kakeami.github.io/blog/about/</loc>
-  </url><url>
-    <loc>https://kakeami.github.io/blog/categories/</loc>
   </url>
 </urlset>
