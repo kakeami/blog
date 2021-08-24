@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Note on Amiblog</title>
+		<link>https://kakeami.github.io/blog/tags/note/</link>
+		<description>Recent content in Note </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>jp</language>
+		
+		<managingEditor>Page(/tags/note) (kakeami)</managingEditor>
+    	
+  		<lastBuildDate>Tue, 24 Aug 2021 08:40:44 +0900</lastBuildDate>
+		
+		<atom:link href="/blog/tags/note/" rel="self" type="application/rss+xml" />
+		
+	</channel>
+</rss>

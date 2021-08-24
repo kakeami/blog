@@ -1,0 +1,17 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Animation on Amiblog</title>
+		<link>https://kakeami.github.io/blog/categories/animation/</link>
+		<description>Recent content in Animation </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>jp</language>
+		
+		<managingEditor>Page(/categories/animation) (kakeami)</managingEditor>
+    	
+  		<lastBuildDate>Tue, 24 Aug 2021 08:40:44 +0900</lastBuildDate>
+		
+		<atom:link href="/blog/categories/animation/" rel="self" type="application/rss+xml" />
+		
+	</channel>
+</rss>
