@@ -51,7 +51,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo &#43; GitHub Pagesでブログを始めた"/>
-<meta name="twitter:description" content="Zenn.devに書くほどでもない個人的なメモを残すために，Hugo &#43; GitHub Pagesで静的サイトを構築した．"/>
+<meta name="twitter:description" content="Zenn.devに書くほどでもない個人的なメモを残すために，Hugo &#43; GitHub Pagesで静的サイトを構築しました．"/>
 
 
 
@@ -147,23 +147,23 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p><a href="https://zenn.dev/">Zenn.dev</a>に書くほどでもない個人的なメモを残すために，<a href="https://gohugo.io/">Hugo</a> + <a href="https://docs.github.com/ja/pages">GitHub Pages</a>で静的サイトを構築した．</p>
-<p>実は以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的サイトを構築したことがあったが，Hugoの方が遥かに高速にビルドできるように感じた．</p>
+  <p><a href="https://zenn.dev/">Zenn.dev</a>に書くほどでもない個人的なメモを残すために，<a href="https://gohugo.io/">Hugo</a> + <a href="https://docs.github.com/ja/pages">GitHub Pages</a>で静的サイトを構築しました．</p>
+<p>実は以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的サイトを構築したことがありましたが，Hugoの方が遥かに高速にビルドできるように感じました．</p>
 <h1 id="作り方">作り方</h1>
 <h2 id="環境">環境</h2>
 <ul>
 <li>macOS 10.15.7</li>
 </ul>
 <h2 id="hugo">Hugo</h2>
-<p>以下のコマンドで<a href="https://gohugo.io/">Hugo</a>をインストールした．</p>
+<p>以下のコマンドで<a href="https://gohugo.io/">Hugo</a>をインストールしました．</p>
 <pre><code>brew install hugo
-</code></pre><p><code>blog</code>というディレクトリを作成した．</p>
+</code></pre><p><code>blog</code>というディレクトリを作成しました．</p>
 <pre><code>hugo new site blog
 </code></pre><h2 id="harbor">Harbor</h2>
-<p><a href="https://github.com/matsuyoshi30/harbor">https://github.com/matsuyoshi30/harbor</a>がシンプルでとても良かったので拝借することにした．</p>
+<p><a href="https://github.com/matsuyoshi30/harbor">https://github.com/matsuyoshi30/harbor</a>がシンプルで素敵だったのので拝借しました．</p>
 <pre><code>cd themes
 git submodule add https://github.com/matsuyoshi30/harbor.git harbor
-</code></pre><p>公式の<code>config.toml</code>から少しだけ修正した．</p>
+</code></pre><p>公式の<code>config.toml</code>から少しだけ修正しました．</p>
 <pre><code>theme = &quot;harbor&quot;
 baseurl = &quot;https://kakeami.github.io/blog/&quot;
 title = &quot;Amiblog&quot;
@@ -240,18 +240,18 @@ disqusShortName = &quot;yourdisqusshortname&quot;
   width = 50
   height = 50
   alt = &quot;Logo&quot;
-</code></pre><p>当面は日本語で書きたかったので<code>languageCode</code>等は<code>jp</code>にした．</p>
+</code></pre><p>当面は日本語で書きたかったので，<code>languageCode</code>等は<code>jp</code>にしました．</p>
 <p><a href="https://qiita.com/ysdyt/items/a581277dd1312a0e83c3">Qiita, Hugo + GitHub Pages（独自ドメイン適応）でサイトを作成・公開する</a>
-を参考に，<code>publishDir</code>は<code>&quot;docs&quot;</code>にした．</p>
-<p><code>search</code>および<code>archives</code>は自分のデフォルト環境では意図通り動作しなかったため，一旦コメントアウトしておいた．</p>
-<p><code>kakeami.github.io</code>は別の用途に残して置きたかった（現時点でアイデアがあるわけではないけど）ため，<code>kakeami.github.io/blog/</code>を<code>baseurl</code>として指定した．</p>
+を参考に，<code>publishDir</code>は<code>&quot;docs&quot;</code>にしました．</p>
+<p><code>search</code>および<code>archives</code>は自分のデフォルト環境では意図通り動作しなかったため，一旦コメントアウトしておきました．</p>
+<p><code>kakeami.github.io</code>は別の用途に残して置きたかった（現時点でアイデアがあるわけではないけど）ため，<code>kakeami.github.io/blog/</code>を<code>baseurl</code>として指定しました．</p>
 <h2 id="github-pages">GitHub Pages</h2>
-<p><code>blog</code>リポジトリを作成し，<code>Settings</code> &gt; <code>Pages</code>から公開設定を行った．
+<p><code>blog</code>リポジトリを作成し，<code>Settings</code> &gt; <code>Pages</code>から公開設定を行いました．
 詳細は
 <a href="https://docs.github.com/ja/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">GitHub Docs, GitHub Pages サイトの公開元を設定する</a>
-を参照されたい．</p>
+を参照いただければと思います．</p>
 <h2 id="デプロイ用スクリプト">デプロイ用スクリプト</h2>
-<p>毎回<code>hugo</code>とタイプするのが面倒だったので，<code>push</code>までまとめて実行する<code>publish.sh</code>を作った．</p>
+<p>毎回<code>hugo</code>とタイプするのが面倒だったので，<code>push</code>までまとめて実行する<code>publish.sh</code>を作りました．</p>
 <pre><code>#!/bin/sh
 
 hugo
@@ -259,7 +259,7 @@ git add . -A
 git commit -m &quot;$1&quot;
 git push origin master
 </code></pre><h1 id="感想">感想</h1>
-<p>以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的サイトを構築したことがあったが，遥かに高速にビルドできてとても快適．</p>
+<p>以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的サイトを構築したことがありましたが，より高速にビルドできてとても快適です．</p>
 <h1 id="今後の課題">今後の課題</h1>
 <ul>
 <li>タイトルのフォントサイズの調整</li>
