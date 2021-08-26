@@ -1,7 +1,7 @@
 ---
 title: "ウマ娘2期でボロボロ泣いてしまった"
 date: 2021-08-24T08:40:44+09:00
-tags: ["Animation", "Note", "Umamusume"]
+tags: ["Keiba", "Umamusume"]
 categories: ["Animation"]
 draft: false
 ---
