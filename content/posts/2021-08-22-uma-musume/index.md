@@ -10,7 +10,7 @@ I watched the anime [Uma Musume Pretty Derby Season 2](https://anime-umamusume.j
 
 <!--more-->
 
-![Uma Musume](./uma-musume.png)
+![Spe](./spe.png)
 
 Please note that this article contains spoilers.
 
@@ -87,5 +87,7 @@ I've heard that racehorses run on dreams, and that's precisely what they do.
 # Conclusion
 
 Uma Musume is the best! Master Twin Turbo is the best!
+
+![Twin](./twin.png)
 
 I'd like to do data analysis of racehorses soon.

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="utf-8" />
+<title>Hugo &#43; GitHub Pagesでブログを始めた</title>
+
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-XX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXXX-XX');
+  </script>
+  
+
+
+  
+  <script data-goatcounter="https://stats.domain.com/count"
+          async src="//stats.domain.com/count.js"></script>
+
+
+  
+  
+
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="//stats.domain.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '123']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://kakeami.github.io/blog/index.xml"
+  title="Amiblog"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo &#43; GitHub Pagesでブログを始めた"/>
+<meta name="twitter:description" content="Zenn.devに書くほどでもない個人的なメモを残すために，Hugo &#43; GitHub Pagesで静的サイトを構築しました．"/>
+
+
+
+<link rel="stylesheet" href="https://kakeami.github.io/blog/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="https://kakeami.github.io/blog/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="https://kakeami.github.io/blog/js/main.bundle.js"></script>
+<script src="https://kakeami.github.io/blog/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.87.0" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://kakeami.github.io/blog/" class="nav-logo">
+        <img
+          src="https://kakeami.github.io/blog/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/blog/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/blog/tags" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/blog/categories" id="Category"
+              ><em class="fas fa-folder-open fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="posts-heading">
+          
+            <h1>
+              Hugo &#43; GitHub Pagesでブログを始めた
+            </h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p><a href="https://zenn.dev/">Zenn.dev</a>に書くほどでもない個人的なメモを残すために，<a href="https://gohugo.io/">Hugo</a> + <a href="https://docs.github.com/ja/pages">GitHub Pages</a>で静的サイトを構築しました．</p>
+<p>実は以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的サイトを構築したことがありましたが，Hugoの方が遥かに高速にビルドできるように感じました．</p>
+<h1 id="作り方">作り方</h1>
+<h2 id="環境">環境</h2>
+<ul>
+<li>macOS 10.15.7</li>
+</ul>
+<h2 id="hugo">Hugo</h2>
+<p>以下のコマンドで<a href="https://gohugo.io/">Hugo</a>をインストールしました．</p>
+<pre><code>brew install hugo
+</code></pre><p><code>blog</code>というディレクトリを作成しました．</p>
+<pre><code>hugo new site blog
+</code></pre><h2 id="harbor">Harbor</h2>
+<p><a href="https://github.com/matsuyoshi30/harbor">https://github.com/matsuyoshi30/harbor</a>がシンプルで素敵だったのので拝借しました．</p>
+<pre><code>cd themes
+git submodule add https://github.com/matsuyoshi30/harbor.git harbor
+</code></pre><p>公式の<code>config.toml</code>から少しだけ修正しました．</p>
+<pre><code>theme = &quot;harbor&quot;
+baseurl = &quot;https://kakeami.github.io/blog/&quot;
+title = &quot;Amiblog&quot;
+paginate = 3
+languageCode = &quot;jp&quot;
+DefaultContentLanguage = &quot;jp&quot;
+enableInlineShortcodes = true
+footnoteReturnLinkContents = &quot;^&quot;
+publishDir = &quot;docs&quot;
+
+# Optional
+# If you use googleAnalytics, you set top-level options in config.toml to the beginning of the config file like other top-level options.
+googleAnalytics = &quot;UA-XXXXXXXX-XX&quot;
+# and disqus too.
+disqusShortName = &quot;yourdisqusshortname&quot;
+
+[params.goatcounter]
+  domain=&quot;stats.domain.com&quot;
+
+[params.matomo]
+  domain=&quot;stats.domain.com&quot;
+  id=&quot;123&quot;
+
+[Author]
+  name = &quot;kakeami&quot;
+
+[outputs]
+  section = [&quot;JSON&quot;, &quot;HTML&quot;]
+
+[[params.nav]]
+  identifier = &quot;about&quot;
+  name = &quot;About&quot;
+  icon = &quot;fas fa-user fa-lg&quot;
+  url = &quot;/about/&quot;
+  weight = 3
+
+[[params.nav]]
+  identifier = &quot;tags&quot;
+  name = &quot;Tags&quot;
+  icon = &quot;fas fa-tag fa-lg&quot;
+  url = &quot;tags&quot;
+  weight = 3
+
+[[params.nav]]
+  identifier = &quot;categories&quot;
+  name = &quot;Category&quot;
+  icon = &quot;fas fa-folder-open fa-lg&quot;
+  url = &quot;categories&quot;
+  weight = 3
+
+#[[params.nav]]
+#  identifier = &quot;search&quot;
+#  name = &quot;Search&quot;
+#  icon = &quot;fas fa-search fa-lg&quot;
+#  url = &quot;search&quot;
+#  weight = 3
+
+#[[params.nav]]
+#  identifier = &quot;archives&quot;
+#  name = &quot;Archives&quot;
+#  icon = &quot;fas fa-archive fa-lg&quot;
+#  url = &quot;archives&quot;
+#  weight = 3
+
+# copy paste this block and change for each social media to add how many ever social media
+# acounts/links you want
+[[params.social]]
+  name=&quot;name of social media&quot;
+  url=&quot;link to social media&quot;
+  icon=&quot;A icon from https://fontawesome.com/&quot;
+
+[params.logo]
+  url = &quot;icon.png&quot; # static/images/icon.png
+  width = 50
+  height = 50
+  alt = &quot;Logo&quot;
+</code></pre><p>当面は日本語で書きたかったので，<code>languageCode</code>等は<code>jp</code>にしました．</p>
+<p><a href="https://qiita.com/ysdyt/items/a581277dd1312a0e83c3">Qiita, Hugo + GitHub Pages（独自ドメイン適応）でサイトを作成・公開する</a>
+を参考に，<code>publishDir</code>は<code>&quot;docs&quot;</code>にしました．</p>
+<p><code>search</code>および<code>archives</code>は自分のデフォルト環境では意図通り動作しなかったため，一旦コメントアウトしておきました．</p>
+<p><code>kakeami.github.io</code>は別の用途に残して置きたかった（現時点でアイデアがあるわけではないけど）ため，<code>kakeami.github.io/blog/</code>を<code>baseurl</code>として指定しました．</p>
+<h2 id="github-pages">GitHub Pages</h2>
+<p><code>blog</code>リポジトリを作成し，<code>Settings</code> &gt; <code>Pages</code>から公開設定を行いました．
+詳細は
+<a href="https://docs.github.com/ja/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">GitHub Docs, GitHub Pages サイトの公開元を設定する</a>
+を参照いただければと思います．</p>
+<h2 id="デプロイ用スクリプト">デプロイ用スクリプト</h2>
+<p>毎回<code>hugo</code>とタイプするのが面倒だったので，<code>push</code>までまとめて実行する<code>publish.sh</code>を作りました．</p>
+<pre><code>#!/bin/sh
+
+hugo
+git add . -A
+git commit -m &quot;$1&quot;
+git push origin master
+</code></pre><h1 id="感想">感想</h1>
+<p>以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的サイトを構築したことがありましたが，より高速にビルドできてとても快適です．</p>
+<h1 id="今後の課題">今後の課題</h1>
+<ul>
+<li>タイトルのフォントサイズの調整</li>
+<li>日本語全文検索</li>
+<li>アーカイブ</li>
+</ul>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://qiita.com/ysdyt/items/a581277dd1312a0e83c3">Qiita, Hugo + GitHub Pages（独自ドメイン適応）でサイトを作成・公開する</a></li>
+<li><a href="https://docs.github.com/ja/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">GitHub Docs, GitHub Pages サイトの公開元を設定する</a></li>
+<li><a href="https://github.com/matsuyoshi30/harbor">https://github.com/matsuyoshi30/harbor</a></li>
+</ul>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://kakeami.github.io/blog/tags/hugo/"
+              >Hugo</a
+            >&nbsp;
+          
+            <a
+              href="https://kakeami.github.io/blog/tags/github-pages/"
+              >GitHub Pages</a
+            >&nbsp;
+          
+            <a
+              href="https://kakeami.github.io/blog/tags/blog/"
+              >Blog</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+        (function() {
+            
+            
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'kakeami-blog';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+  <noscript
+    >Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript"
+      >comments powered by Disqus.</a
+    ></noscript
+  >
+  <a href="https://disqus.com/" class="dsq-brlink"
+    >comments powered by <span class="logo-disqus">Disqus</span></a
+  >
+
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="link%20to%20social%20media" name="name of social media">
+        <em class="A icon from https://fontawesome.com/"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://kakeami.github.io/blog/about">kakeami</a>
+      &nbsp;&copy;
+      2021
+      
+        &nbsp;/&nbsp;
+        <a href="https://kakeami.github.io/blog/">Amiblog</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+       <a href="https://gohugo.io">Hugo</a>&nbsp;
+      
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
