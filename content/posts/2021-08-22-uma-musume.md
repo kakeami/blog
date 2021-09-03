@@ -1,88 +1,88 @@
 ---
-title: "ウマ娘2期でボロボロ泣いてしまった"
+title: "Uma Musume Pretty Derby Season 2 made me cry"
 date: 2021-08-24T08:40:44+09:00
 tags: ["Keiba", "Umamusume"]
 categories: ["Animation"]
 draft: false
 ---
 
-今更ながらアニメ[ウマ娘 プリティーダービー Season2](https://anime-umamusume.jp/)を観てボロボロ泣いてしまったので，自分語りを残しておきます．
+I watched the anime [Uma Musume Pretty Derby Season 2](https://anime-umamusume.jp/) and cried a lot, so I'll leave you with my story.
 
 <!--more-->
-なお，本記事にはネタバレが含まれるためご注意ください．
+Please note that this article contains spoilers.
 
-# はじめに
+# Introduction
 
-私は競馬にもソシャゲにも興味がないアニメオタクです．
-全てのアニメーターを尊敬しています．
-お金に余裕ができたら原画集がほしい．
+I'm an anime otaku with no interest in horse racing or social-network games. 
+I respect all animators.
+ I would like to have a collection of the original drawings when I can afford it.
 
-最近は，YouTubeで複合MADを見ながらジムでシャカシャカとクロストレーナーを動かすのが趣味でした．
-その中でウマ娘のレースシーンが部分的に使われており，こんなに熱いアニメなのかと興味がわきました．
+Recently, my hobby has been to move the cross trainer at the gym while watching compound MADs on YouTube.
+I was interested in seeing how passionate this anime is because I saw a part of Uma Musume's race scene.
 
-# 泣いてしまった理由
+# Reasons why I impressed
 
-## アニメの質が良い
+## The quality of the animation is excellent
 
-まず客観的な事実として，アニメの質が非常に良いです．
+First of all, the objective fact is that the quality of the animation is excellent.
 
-全体的に安定しており，魅せるべきところはしっかり魅せてくれます．
-特にレースシーンとウイニングライブシーンは圧巻．
-初めて1話の引きを見たとき格好良くて声が漏れてしまいました（家族が近くにいなくてよかった）．
-後半の怒涛の展開は最高です．最終回はもう…．
+It's stable overall, and it shows us what we need to see.
+The race scene and the winning live scene are awe-inspiring.
+When I first saw the race scene of the first episode, it was so cool that my voice leaked out (I'm glad my family wasn't around).
+The raging development in the second half is the best. 
+The last episode was beyond description.
 
-おそらくこれがウマ娘のキモだと思いますが，脚本が基本的に史実に準拠しています．
-実況・解説をそのまま使っている部分もあるという徹底ぶり．
-アニメを鑑賞した後：
+This is probably the key to Uma Musume, but the script is basically based on historical facts.
+There are even parts that are based on actual situations and commentaries.
+After watching the anime
 
-- YouTube等で実際のレース動画を見る
-- Wikipedia等で史実を調べる
+- Watch actual race videos on YouTube, etc.
+- Look up the historical facts on Wikipedia, etc.
 
-等してまた泣けるという，一話で何度でも楽しめる作品になっています（ソシャゲで遊べば更に楽しめる！）．
+and cry again. (If you play the social-network game, you can enjoy it even more!)
 
-輪をかけて凄いのが，ウマ娘同士の交流という創作を矛盾なく加えることで，ただでさえ感動的な史実が何倍も胸を打つようになる，という点です．
-10話でツインターボの「逃亡劇」を見てトウカイテイオーが引退を撤回するシーンはまさに白眉（何回見ても泣けます）．
-史実ではツインターボとトウカイテイオーに接点は無かったことを知り驚愕しました（そしてまた泣きました）．
-アニメスタッフは本当に凄いです．
+Even more impressive is that the touching historical facts become even more heartbreaking by adding the creative interaction between the Uma Musumes without contradiction.
+The scene in episode 10 where Tokai Teio withdraws her retirement after seeing Twin Turbo's "escape drama" is a real highlight (it makes me cry no matter how many times I watch it).
+I was shocked to learn that Twin Turbo and Tokai Teio had no connection in history (and I cried again).
+The animation staff is genuinely talented.
 
-## 自分を重てしまう
+## I put my own circumstances on top of the character
 
-隙あらば自分語り．
+When I was a student, I didn't particularly like running. 
+Still, after I became an adult, I discovered the joy of jogging (I was an industrial researcher at the time, and for some reason, there are many joggers runners in research jobs).
+I was attracted by the fact that I didn't have to think about anything while I was running, and the beer tasted so good afterward.
+However, after a certain amount of jogging, I realized something. Everything tastes better after a run.
+After that, running became my hobby, both indoors and outdoors.
 
-学生時代は走ることは特に好きではありませんでしたが，社会人になってからジョギングの楽しさに目覚めました（当時は研究職でしたが，なぜか研究職には市民ランナーが多いです）．
-走っている間は何も考えなくて良いことと，走ったあとのビールが美味しすぎることに惹かれました．
-しかし，ある程度ジョギングを続けた結果気づきました．走った後は何でも美味しいと．
-それからは屋内・屋外を問わず走ることが趣味になりました．
+There was a time when I ran every day until my child was born.
+Even after the birth of my child, I was running more than 5km 2 to 3 times a week.
+My dream was to participate in a marathon with my child.
 
-子供が生まれるまでは毎日走っている時期もありました．
-子供が生まれてからも，5km以上x週2-3回は走っていました．
-将来の夢は，子供と市民マラソン大会に出場することになりました．
+However, since the beginning of this year, I started to feel numbness in the little finger of my left hand during the exercise.
+I went to see a doctor to be sure, and he told me that I had a [cervical disc herniation](https://www.spine-health.com/conditions/herniated-disc/cervical-herniated-disc-symptoms-and-treatment-options).
+The cause seems to be that the bones in my neck are congenitally slightly bent.
+It's one more thing I can't tell my parents.
 
-ところが今年に入ってから，運動中に左手の小指にしびれを感じるようになりました．
-念の為医者に診てもらったところ，[頚椎椎間板ヘルニア](https://www.joa.or.jp/public/sick/condition/spinal_disc_herniation.html)とのこと．
-先天的に首の骨が少し曲がっていることが原因らしい．
-親に話せないことが一つ増えてしました．
+It's not serious since I'm able to live everyday life. 
+Still, to prevent the progression of the disease, I should avoid any exercise that puts strain on my neck.
+For example, running and jumping are not allowed.
+Bicycling is also not recommended because the forward-leaning posture puts a lot of strain on the neck (which is frustrating because one of my dreams was to participate in a triathlon).
+I was lucky to be told that cross-training at the gym would be no problem.
 
-普通に日常生活が送れているので深刻ではありませんが，進行を防ぐため首に負担のかかる運動は避けたほうが良いとのこと．
-例えば走ったり飛んだりは駄目．
-自転車も前傾姿勢で首に負担がかかるため駄目（実はトライアスロンに出ることも夢のひとつだったので悔しい）．
-ジムのクロストレーナーなら問題ないと言われたのが幸いでした．
+It was an unexpected turn of events that tied up my life.
+To be honest, I was shocked because I thought I was still young.
+However, I was grateful to give up on it as an unavoidable forced event because of the congenital hernia.
+If it had been caused by an acquired condition, I would have regretted it for the rest of my life.
 
-予想外の展開で人生に縛りができてしまいました．
-正直自分のことをまだ若いと思っていたのでショックは大きかったです．
-ただ，先天性のヘルニアのため，避けられない強制イベントとして諦めがつくのはありがたかったです．
-もし後天的なものが原因だったら，一生後悔し続けると思います．
+In such a situation
+I came across [Uma Musume Pretty Derby](https://anime-umamusume.jp/).
+I understand that what "running" means to me and to racehorses are two very different things.
+Nevertheless, every time I saw them being deprived of "running" in the anime, I felt as if my heart was being torn out.
+And when I saw them overcome their breakdowns and win races, it gave me great courage.
+I've heard that racehorses run on dreams, and that's precisely what they do.
 
-そんな中
-[ウマ娘 プリティーダービー](https://anime-umamusume.jp/)
-と出会いました．
-私にとっての「走る」ということと，競走馬にとっての「走る」ということの重みが天と地ほど違うことは理解しています．
-それでも，アニメ中で彼女らが「走る」ことを奪われるさまを見る度に，自分の心をえぐられるような気持ちになりました．
-そして，故障を乗り越えレースで勝利する姿を見て，大きな勇気をもらいました．
-競走馬は夢を乗せて走ると聞きましたが，まさにその通りだなと．
+# Conclusion
 
-# おわりに
+Uma Musume is the best! Master Twin Turbo is the best!
 
-ウマ娘最高！ツインターボ師匠最高！
-
-最高すぎるので，近々，競走馬のデータ分析をやりたいと思います．
+I'd like to do data analysis of racehorses soon.
