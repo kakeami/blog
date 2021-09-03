@@ -9,6 +9,9 @@ draft: false
 I watched the anime [Uma Musume Pretty Derby Season 2](https://anime-umamusume.jp/) and cried a lot, so I'll leave you with my story.
 
 <!--more-->
+
+![Uma Musume](./uma-musume.png)
+
 Please note that this article contains spoilers.
 
 # Introduction
