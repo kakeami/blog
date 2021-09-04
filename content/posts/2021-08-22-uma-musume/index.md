@@ -31,8 +31,8 @@ First of all, the objective fact is that the quality of the animation is excelle
 
 It's stable overall, and it shows us what we need to see.
 The race scene and the winning live scene are awe-inspiring.
-When I first saw the race scene of the first episode, it was so cool that my voice leaked out (I'm glad my family wasn't around).
-The raging development in the second half is the best. 
+When I first saw the last scene of the first episode, it was so cool that my voice leaked out (I'm glad my family wasn't around).
+The raging development in the second half is the best.
 The last episode was beyond description.
 
 This is probably the key to Uma Musume, but the script is basically based on historical facts.
