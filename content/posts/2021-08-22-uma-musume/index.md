@@ -23,7 +23,7 @@ I respect all animators.
 Recently, my hobby has been to move the cross trainer at the gym while watching compound MADs on YouTube.
 I was interested in seeing how passionate this anime is because I saw a part of Uma Musume's race scene.
 
-# Reasons why I impressed
+# Reasons why I'm impressed
 
 ## The quality of the animation is excellent
 
