@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="utf-8" />
+<title>From Disqus to Utterances</title>
+
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-XX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXXX-XX');
+  </script>
+  
+
+
+  
+  <script data-goatcounter="https://stats.domain.com/count"
+          async src="//stats.domain.com/count.js"></script>
+
+
+  
+  
+
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+      var u="//stats.domain.com/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '123']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://kakeami.github.io/blog/index.xml"
+  title="Amiblog"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="From Disqus to Utterances"/>
+<meta name="twitter:description" content="I&rsquo;ve been using Disqus to implement the comments feature, but the free plan was not good because of the ads.
+So I migrated to Utterances which implements the comment feature using GitHub Issues."/>
+
+
+
+<link rel="stylesheet" href="https://kakeami.github.io/blog/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="https://kakeami.github.io/blog/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="https://kakeami.github.io/blog/js/main.bundle.js"></script>
+<script src="https://kakeami.github.io/blog/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.87.0" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://kakeami.github.io/blog/" class="nav-logo">
+        <img
+          src="https://kakeami.github.io/blog/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/blog/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/blog/tags" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/blog/categories" id="Category"
+              ><em class="fas fa-folder-open fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="posts-heading">
+          
+            <h1>
+              From Disqus to Utterances
+            </h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>I&rsquo;ve been using Disqus to implement the comments feature, but the free plan was not good because of the ads.
+So I migrated to Utterances which implements the comment feature using GitHub Issues.</p>
+<h1 id="background">Background</h1>
+<p>Hugo&rsquo;s Harbor theme, which I used in this blog, quickly implemented the comment function by setting <code>disqusShortName</code> in <code>config.toml</code>.
+However, since I&rsquo;m using Disqus free plan, I&rsquo;ve started to get ads sometimes.
+It was not so beautiful, so I decided to move to Utterances, which I&rsquo;ve been interested in for a while.</p>
+<p>Utterances is a lightweight comment widget implemented using GitHub Issues.</p>
+<h1 id="how-to-implement">How to implement</h1>
+<h2 id="prepare-a-github-repository-for-comments">Prepare a GitHub repository for comments</h2>
+<p>Since I deployed this blog based on <code>github.com/kakeami/blog</code>, there was no need to create a new repository by using GitHub Issues in the <code>kakeami/blog</code> repository.
+However, mixing the original issues and comments seemed inconvenient, so I created a <code>github.com/kakeami/blog-comments</code> repository for storing comments.</p>
+<h2 id="install-utterances">Install Utterances</h2>
+<p>I installed Utterances from GitHub App as instructed.</p>
+<h2 id="embed-the-script-tag">Embed the script tag</h2>
+<p>I needed to embed the following script tag where I wanted to put the comment field.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://utteranc.es/client.js&#34;</span>
+    <span style="color:#a6e22e">repo</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;kakeami/blog-comments&#34;</span>
+    <span style="color:#a6e22e">issue-term</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pathname&#34;</span>
+    <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comment&#34;</span>
+    <span style="color:#a6e22e">theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;github-light&#34;</span>
+    <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>
+    <span style="color:#a6e22e">async</span>&gt;
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>Please refer to the official page of Utterances for the definition of each setting value.</p>
+<p>I was not familiar with Hugo at all, so I had to research where to embed it.
+After <code>grep</code>ing the source code, I found that Disqus is embedded in <code>/themes/harbor/layouts/_default/single.html</code> in Harbor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> {{ define &#34;main&#34; }}
+   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>&gt;
+     &lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;article&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-post&#34;</span>&gt;
+       {{ partial &#34;toc.html&#34; . }}
+
+       {{ if .Params.tags }}
+         &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-tags&#34;</span>&gt;
+           {{ range .Params.tags }}
+             &lt;<span style="color:#f92672">a</span>
+               <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absLangURL</span> <span style="color:#960050;background-color:#1e0010">}}</span><span style="color:#a6e22e">tags</span><span style="color:#960050;background-color:#1e0010">/{{</span> <span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">urlize</span> <span style="color:#960050;background-color:#1e0010">}}{{</span> <span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">$.</span><span style="color:#a6e22e">Site</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">uglyurls</span> <span style="color:#960050;background-color:#1e0010">}}.</span><span style="color:#a6e22e">html</span><span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">else</span> <span style="color:#960050;background-color:#1e0010">}}/{{</span> <span style="color:#a6e22e">end</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>
+               &gt;{{ . }}&lt;/<span style="color:#f92672">a</span>
+             &gt;&amp;nbsp;
+           {{ end }}
+         &lt;/<span style="color:#f92672">div</span>&gt;
+       {{ end }}
+     &lt;/<span style="color:#f92672">article</span>&gt;
+     {{ if and (gt .WordCount 400) (.Param &#34;backtotop&#34;) }}
+       {{ partial &#34;backtotop.html&#34; . }}
+       &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;topFunction()&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;backtotopButton&#34;</span>&gt;
+         &lt;<span style="color:#f92672">em</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-angle-up&#34;</span>&gt;&lt;/<span style="color:#f92672">em</span>&gt;
+       &lt;/<span style="color:#f92672">button</span>&gt;
+     {{ end }}
+     {{ if  (not (isset .Params &#34;disable_comments&#34;)) }}
+       {{ partial &#34;disqus.html&#34; . }}
+     {{ end }}
+   &lt;/<span style="color:#f92672">div</span>&gt;
+ {{ end }}
+</code></pre></div><p>It seems that <code>single.html</code> (called Single Page Templates) is a template applied to individual articles.</p>
+<p>According to <a href="https://maku77.github.io/hugo/layout/template-types.html">レイアウト用のテンプレートの種類を理解する</a>, Hugo employs Single Page Templates in the following order of precedence in:</p>
+<ul>
+<li><code>/layouts/{type name}/{layout name}.html</code></li>
+<li><code>/layouts/{section name}/{layout name}.html</code></li>
+<li><code>/layouts/{type name}/single.html</code></li>
+<li><code>/layouts/{section name}/single.html</code></li>
+<li><code>/layouts/_default/single.html</code></li>
+<li><code>/themes/{theme name}/layouts/{type name}/{layout name}.html</code></li>
+<li><code>/themes/{theme name}/layouts/{section name}/{layout name}.html</code></li>
+<li><code>/themes/{theme name}/layouts/{type name}/single.html</code></li>
+<li><code>/themes/{theme name}/layouts/{section name}/single.html</code></li>
+<li><code>/themes/{theme name}/layouts/_default/single.html</code></li>
+</ul>
+<p>To make it consistent with Harbor&rsquo;s structure, I decided to override it by creating <code>/layouts/_default/single.html</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> {{ define &#34;main&#34; }}
+   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>&gt;
+     &lt;<span style="color:#f92672">article</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;article&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-post&#34;</span>&gt;
+       {{ partial &#34;toc.html&#34; . }}
+
+       {{ if .Params.tags }}
+         &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blog-tags&#34;</span>&gt;
+           {{ range .Params.tags }}
+             &lt;<span style="color:#f92672">a</span>
+               <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absLangURL</span> <span style="color:#960050;background-color:#1e0010">}}</span><span style="color:#a6e22e">tags</span><span style="color:#960050;background-color:#1e0010">/{{</span> <span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">urlize</span> <span style="color:#960050;background-color:#1e0010">}}{{</span> <span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">$.</span><span style="color:#a6e22e">Site</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">uglyurls</span> <span style="color:#960050;background-color:#1e0010">}}.</span><span style="color:#a6e22e">html</span><span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">else</span> <span style="color:#960050;background-color:#1e0010">}}/{{</span> <span style="color:#a6e22e">end</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>
+               &gt;{{ . }}&lt;/<span style="color:#f92672">a</span>
+             &gt;&amp;nbsp;
+           {{ end }}
+         &lt;/<span style="color:#f92672">div</span>&gt;
+       {{ end }}
+     &lt;/<span style="color:#f92672">article</span>&gt;
+     {{ if and (gt .WordCount 400) (.Param &#34;backtotop&#34;) }}
+       {{ partial &#34;backtotop.html&#34; . }}
+       &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;topFunction()&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;backtotopButton&#34;</span>&gt;
+         &lt;<span style="color:#f92672">em</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-angle-up&#34;</span>&gt;&lt;/<span style="color:#f92672">em</span>&gt;
+       &lt;/<span style="color:#f92672">button</span>&gt;
+     {{ end }}
+
+     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://utteranc.es/client.js&#34;</span>
+         <span style="color:#a6e22e">repo</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;kakeami/blog-comments&#34;</span>
+         <span style="color:#a6e22e">issue-term</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pathname&#34;</span>
+         <span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comment&#34;</span>
+         <span style="color:#a6e22e">theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;github-light&#34;</span>
+         <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>
+         <span style="color:#a6e22e">async</span>&gt;
+     &lt;/<span style="color:#f92672">script</span>&gt;
+
+   &lt;/<span style="color:#f92672">div</span>&gt;
+ {{ end }}
+</code></pre></div><p>That&rsquo;s it!</p>
+<h1 id="impressions">Impressions</h1>
+<p>Very useful and cool.
+I&rsquo;m glad I learned something about Hugo&rsquo;s design.</p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://utteranc.es/">utterances</a></li>
+<li><a href="https://gohugo.io/templates/lookup-order/#examples-layout-lookup-for-regular-pages">Hugo&rsquo;s Lookup Order</a></li>
+<li><a href="https://maku77.github.io/hugo/layout/template-types.html">レイアウト用のテンプレートの種類を理解する</a></li>
+</ul>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://kakeami.github.io/blog/tags/hugo/"
+              >Hugo</a
+            >&nbsp;
+          
+            <a
+              href="https://kakeami.github.io/blog/tags/github-pages/"
+              >GitHub Pages</a
+            >&nbsp;
+          
+            <a
+              href="https://kakeami.github.io/blog/tags/blog/"
+              >Blog</a
+            >&nbsp;
+          
+            <a
+              href="https://kakeami.github.io/blog/tags/utterances/"
+              >Utterances</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+
+    <script src="https://utteranc.es/client.js"
+        repo="kakeami/blog-comments"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="link%20to%20social%20media" name="name of social media">
+        <em class="A icon from https://fontawesome.com/"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://kakeami.github.io/blog/about">kakeami</a>
+      &nbsp;&copy;
+      2021
+      
+        &nbsp;/&nbsp;
+        <a href="https://kakeami.github.io/blog/">Amiblog</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+       <a href="https://gohugo.io">Hugo</a>&nbsp;
+      
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

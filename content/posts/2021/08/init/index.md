@@ -21,13 +21,13 @@ draft: false
 
 以下のコマンドで[Hugo](https://gohugo.io/)をインストールしました．
 
-```
+```sh
 brew install hugo
 ```
 
 `blog`というディレクトリを作成しました．
 
-```
+```sh
 hugo new site blog
 ```
 
@@ -35,14 +35,14 @@ hugo new site blog
 
 [https://github.com/matsuyoshi30/harbor](https://github.com/matsuyoshi30/harbor)がシンプルで素敵だったのので拝借しました．
 
-```
+```sh
 cd themes
 git submodule add https://github.com/matsuyoshi30/harbor.git harbor
 ```
 
 公式の`config.toml`から少しだけ修正しました．
 
-```
+```toml
 theme = "harbor"
 baseurl = "https://kakeami.github.io/blog/"
 title = "Amiblog"
@@ -141,7 +141,7 @@ disqusShortName = "yourdisqusshortname"
 
 毎回`hugo`とタイプするのが面倒だったので，`push`までまとめて実行する`publish.sh`を作りました．
 
-```
+```sh
 #!/bin/sh
 
 hugo

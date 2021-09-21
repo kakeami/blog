@@ -156,91 +156,91 @@
 </ul>
 <h2 id="hugo">Hugo</h2>
 <p>以下のコマンドで<a href="https://gohugo.io/">Hugo</a>をインストールしました．</p>
-<pre><code>brew install hugo
-</code></pre><p><code>blog</code>というディレクトリを作成しました．</p>
-<pre><code>hugo new site blog
-</code></pre><h2 id="harbor">Harbor</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew install hugo
+</code></pre></div><p><code>blog</code>というディレクトリを作成しました．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">hugo new site blog
+</code></pre></div><h2 id="harbor">Harbor</h2>
 <p><a href="https://github.com/matsuyoshi30/harbor">https://github.com/matsuyoshi30/harbor</a>がシンプルで素敵だったのので拝借しました．</p>
-<pre><code>cd themes
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd themes
 git submodule add https://github.com/matsuyoshi30/harbor.git harbor
-</code></pre><p>公式の<code>config.toml</code>から少しだけ修正しました．</p>
-<pre><code>theme = &quot;harbor&quot;
-baseurl = &quot;https://kakeami.github.io/blog/&quot;
-title = &quot;Amiblog&quot;
-paginate = 3
-languageCode = &quot;jp&quot;
-DefaultContentLanguage = &quot;jp&quot;
-enableInlineShortcodes = true
-footnoteReturnLinkContents = &quot;^&quot;
-publishDir = &quot;docs&quot;
+</code></pre></div><p>公式の<code>config.toml</code>から少しだけ修正しました．</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;harbor&#34;</span>
+<span style="color:#a6e22e">baseurl</span> = <span style="color:#e6db74">&#34;https://kakeami.github.io/blog/&#34;</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Amiblog&#34;</span>
+<span style="color:#a6e22e">paginate</span> = <span style="color:#ae81ff">3</span>
+<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;jp&#34;</span>
+<span style="color:#a6e22e">DefaultContentLanguage</span> = <span style="color:#e6db74">&#34;jp&#34;</span>
+<span style="color:#a6e22e">enableInlineShortcodes</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">footnoteReturnLinkContents</span> = <span style="color:#e6db74">&#34;^&#34;</span>
+<span style="color:#a6e22e">publishDir</span> = <span style="color:#e6db74">&#34;docs&#34;</span>
 
-# Optional
-# If you use googleAnalytics, you set top-level options in config.toml to the beginning of the config file like other top-level options.
-googleAnalytics = &quot;UA-XXXXXXXX-XX&quot;
-# and disqus too.
-disqusShortName = &quot;yourdisqusshortname&quot;
+<span style="color:#75715e"># Optional</span>
+<span style="color:#75715e"># If you use googleAnalytics, you set top-level options in config.toml to the beginning of the config file like other top-level options.</span>
+<span style="color:#a6e22e">googleAnalytics</span> = <span style="color:#e6db74">&#34;UA-XXXXXXXX-XX&#34;</span>
+<span style="color:#75715e"># and disqus too.</span>
+<span style="color:#a6e22e">disqusShortName</span> = <span style="color:#e6db74">&#34;yourdisqusshortname&#34;</span>
 
-[params.goatcounter]
-  domain=&quot;stats.domain.com&quot;
+[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">goatcounter</span>]
+  <span style="color:#a6e22e">domain</span>=<span style="color:#e6db74">&#34;stats.domain.com&#34;</span>
 
-[params.matomo]
-  domain=&quot;stats.domain.com&quot;
-  id=&quot;123&quot;
+[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">matomo</span>]
+  <span style="color:#a6e22e">domain</span>=<span style="color:#e6db74">&#34;stats.domain.com&#34;</span>
+  <span style="color:#a6e22e">id</span>=<span style="color:#e6db74">&#34;123&#34;</span>
 
-[Author]
-  name = &quot;kakeami&quot;
+[<span style="color:#a6e22e">Author</span>]
+  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;kakeami&#34;</span>
 
-[outputs]
-  section = [&quot;JSON&quot;, &quot;HTML&quot;]
+[<span style="color:#a6e22e">outputs</span>]
+  <span style="color:#a6e22e">section</span> = [<span style="color:#e6db74">&#34;JSON&#34;</span>, <span style="color:#e6db74">&#34;HTML&#34;</span>]
 
-[[params.nav]]
-  identifier = &quot;about&quot;
-  name = &quot;About&quot;
-  icon = &quot;fas fa-user fa-lg&quot;
-  url = &quot;/about/&quot;
-  weight = 3
+[[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">nav</span>]]
+  <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;about&#34;</span>
+  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;About&#34;</span>
+  <span style="color:#a6e22e">icon</span> = <span style="color:#e6db74">&#34;fas fa-user fa-lg&#34;</span>
+  <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/about/&#34;</span>
+  <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">3</span>
 
-[[params.nav]]
-  identifier = &quot;tags&quot;
-  name = &quot;Tags&quot;
-  icon = &quot;fas fa-tag fa-lg&quot;
-  url = &quot;tags&quot;
-  weight = 3
+[[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">nav</span>]]
+  <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;tags&#34;</span>
+  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Tags&#34;</span>
+  <span style="color:#a6e22e">icon</span> = <span style="color:#e6db74">&#34;fas fa-tag fa-lg&#34;</span>
+  <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;tags&#34;</span>
+  <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">3</span>
 
-[[params.nav]]
-  identifier = &quot;categories&quot;
-  name = &quot;Category&quot;
-  icon = &quot;fas fa-folder-open fa-lg&quot;
-  url = &quot;categories&quot;
-  weight = 3
+[[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">nav</span>]]
+  <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;categories&#34;</span>
+  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Category&#34;</span>
+  <span style="color:#a6e22e">icon</span> = <span style="color:#e6db74">&#34;fas fa-folder-open fa-lg&#34;</span>
+  <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;categories&#34;</span>
+  <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">3</span>
 
-#[[params.nav]]
-#  identifier = &quot;search&quot;
-#  name = &quot;Search&quot;
-#  icon = &quot;fas fa-search fa-lg&quot;
-#  url = &quot;search&quot;
-#  weight = 3
+<span style="color:#75715e">#[[params.nav]]</span>
+<span style="color:#75715e">#  identifier = &#34;search&#34;</span>
+<span style="color:#75715e">#  name = &#34;Search&#34;</span>
+<span style="color:#75715e">#  icon = &#34;fas fa-search fa-lg&#34;</span>
+<span style="color:#75715e">#  url = &#34;search&#34;</span>
+<span style="color:#75715e">#  weight = 3</span>
 
-#[[params.nav]]
-#  identifier = &quot;archives&quot;
-#  name = &quot;Archives&quot;
-#  icon = &quot;fas fa-archive fa-lg&quot;
-#  url = &quot;archives&quot;
-#  weight = 3
+<span style="color:#75715e">#[[params.nav]]</span>
+<span style="color:#75715e">#  identifier = &#34;archives&#34;</span>
+<span style="color:#75715e">#  name = &#34;Archives&#34;</span>
+<span style="color:#75715e">#  icon = &#34;fas fa-archive fa-lg&#34;</span>
+<span style="color:#75715e">#  url = &#34;archives&#34;</span>
+<span style="color:#75715e">#  weight = 3</span>
 
-# copy paste this block and change for each social media to add how many ever social media
-# acounts/links you want
-[[params.social]]
-  name=&quot;name of social media&quot;
-  url=&quot;link to social media&quot;
-  icon=&quot;A icon from https://fontawesome.com/&quot;
+<span style="color:#75715e"># copy paste this block and change for each social media to add how many ever social media</span>
+<span style="color:#75715e"># acounts/links you want</span>
+[[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">social</span>]]
+  <span style="color:#a6e22e">name</span>=<span style="color:#e6db74">&#34;name of social media&#34;</span>
+  <span style="color:#a6e22e">url</span>=<span style="color:#e6db74">&#34;link to social media&#34;</span>
+  <span style="color:#a6e22e">icon</span>=<span style="color:#e6db74">&#34;A icon from https://fontawesome.com/&#34;</span>
 
-[params.logo]
-  url = &quot;icon.png&quot; # static/images/icon.png
-  width = 50
-  height = 50
-  alt = &quot;Logo&quot;
-</code></pre><p>当面は日本語で書きたかったので，<code>languageCode</code>等は<code>jp</code>にしました．</p>
+[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">logo</span>]
+  <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;icon.png&#34;</span> <span style="color:#75715e"># static/images/icon.png</span>
+  <span style="color:#a6e22e">width</span> = <span style="color:#ae81ff">50</span>
+  <span style="color:#a6e22e">height</span> = <span style="color:#ae81ff">50</span>
+  <span style="color:#a6e22e">alt</span> = <span style="color:#e6db74">&#34;Logo&#34;</span>
+</code></pre></div><p>当面は日本語で書きたかったので，<code>languageCode</code>等は<code>jp</code>にしました．</p>
 <p><a href="https://qiita.com/ysdyt/items/a581277dd1312a0e83c3">Qiita, Hugo + GitHub Pages（独自ドメイン適応）でサイトを作成・公開する</a>
 を参考に，<code>publishDir</code>は<code>&quot;docs&quot;</code>にしました．</p>
 <p><code>search</code>および<code>archives</code>は自分のデフォルト環境では意図通り動作しなかったため，一旦コメントアウトしておきました．</p>
@@ -252,13 +252,13 @@ disqusShortName = &quot;yourdisqusshortname&quot;
 を参照いただければと思います．</p>
 <h2 id="デプロイ用スクリプト">デプロイ用スクリプト</h2>
 <p>毎回<code>hugo</code>とタイプするのが面倒だったので，<code>push</code>までまとめて実行する<code>publish.sh</code>を作りました．</p>
-<pre><code>#!/bin/sh
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>
 hugo
 git add . -A
-git commit -m &quot;$1&quot;
+git commit -m <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
 git push origin master
-</code></pre><h1 id="感想">感想</h1>
+</code></pre></div><h1 id="感想">感想</h1>
 <p>以前<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で静的サイトを構築したことがありましたが，より高速にビルドできてとても快適です．</p>
 <h1 id="今後の課題">今後の課題</h1>
 <ul>

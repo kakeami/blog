@@ -3,21 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kakeami.github.io/blog/</loc>
-    <lastmod>2021-08-24T08:40:44+09:00</lastmod>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/tags/blog/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/categories/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/posts/2021/09/utteraces/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/tags/github-pages/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/tags/hugo/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/categories/hugo/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/posts/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/tags/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://kakeami.github.io/blog/tags/utterances/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kakeami.github.io/blog/categories/animation/</loc>
     <lastmod>2021-08-24T08:40:44+09:00</lastmod>
   </url><url>
-    <loc>https://kakeami.github.io/blog/categories/</loc>
-    <lastmod>2021-08-24T08:40:44+09:00</lastmod>
-  </url><url>
     <loc>https://kakeami.github.io/blog/tags/keiba/</loc>
-    <lastmod>2021-08-24T08:40:44+09:00</lastmod>
-  </url><url>
-    <loc>https://kakeami.github.io/blog/posts/</loc>
-    <lastmod>2021-08-24T08:40:44+09:00</lastmod>
-  </url><url>
-    <loc>https://kakeami.github.io/blog/tags/</loc>
     <lastmod>2021-08-24T08:40:44+09:00</lastmod>
   </url><url>
     <loc>https://kakeami.github.io/blog/posts/2021/08/uma-musume/</loc>
@@ -25,18 +43,6 @@
   </url><url>
     <loc>https://kakeami.github.io/blog/tags/umamusume/</loc>
     <lastmod>2021-08-24T08:40:44+09:00</lastmod>
-  </url><url>
-    <loc>https://kakeami.github.io/blog/tags/blog/</loc>
-    <lastmod>2021-08-11T22:35:56+09:00</lastmod>
-  </url><url>
-    <loc>https://kakeami.github.io/blog/tags/github-pages/</loc>
-    <lastmod>2021-08-11T22:35:56+09:00</lastmod>
-  </url><url>
-    <loc>https://kakeami.github.io/blog/tags/hugo/</loc>
-    <lastmod>2021-08-11T22:35:56+09:00</lastmod>
-  </url><url>
-    <loc>https://kakeami.github.io/blog/categories/hugo/</loc>
-    <lastmod>2021-08-11T22:35:56+09:00</lastmod>
   </url><url>
     <loc>https://kakeami.github.io/blog/posts/2021/08/init/</loc>
     <lastmod>2021-08-11T22:35:56+09:00</lastmod>
