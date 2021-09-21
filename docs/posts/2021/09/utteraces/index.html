@@ -204,16 +204,16 @@ After <code>grep</code>ing the source code, I found that Disqus is embedded in <
 </code></pre></div><p>It seems that <code>single.html</code> (called Single Page Templates) is a template applied to individual articles.</p>
 <p>According to <a href="https://maku77.github.io/hugo/layout/template-types.html">レイアウト用のテンプレートの種類を理解する</a>, Hugo employs Single Page Templates in the following order of precedence in:</p>
 <ul>
-<li><code>/layouts/{type name}/{layout name}.html</code></li>
-<li><code>/layouts/{section name}/{layout name}.html</code></li>
-<li><code>/layouts/{type name}/single.html</code></li>
-<li><code>/layouts/{section name}/single.html</code></li>
+<li><code>/layouts/{type}/{layout}.html</code></li>
+<li><code>/layouts/{section}/{layout}.html</code></li>
+<li><code>/layouts/{type}/single.html</code></li>
+<li><code>/layouts/{section}/single.html</code></li>
 <li><code>/layouts/_default/single.html</code></li>
-<li><code>/themes/{theme name}/layouts/{type name}/{layout name}.html</code></li>
-<li><code>/themes/{theme name}/layouts/{section name}/{layout name}.html</code></li>
-<li><code>/themes/{theme name}/layouts/{type name}/single.html</code></li>
-<li><code>/themes/{theme name}/layouts/{section name}/single.html</code></li>
-<li><code>/themes/{theme name}/layouts/_default/single.html</code></li>
+<li><code>/themes/{theme}/layouts/{type}/{layout}.html</code></li>
+<li><code>/themes/{theme}/layouts/{section}/{layout}.html</code></li>
+<li><code>/themes/{theme}/layouts/{type}/single.html</code></li>
+<li><code>/themes/{theme}/layouts/{section}/single.html</code></li>
+<li><code>/themes/{theme}/layouts/_default/single.html</code></li>
 </ul>
 <p>To make it consistent with Harbor&rsquo;s structure, I decided to override it by creating <code>/layouts/_default/single.html</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> {{ define &#34;main&#34; }}

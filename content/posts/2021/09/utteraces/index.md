@@ -85,16 +85,16 @@ It seems that `single.html` (called Single Page Templates) is a template applied
 
 According to [レイアウト用のテンプレートの種類を理解する](https://maku77.github.io/hugo/layout/template-types.html), Hugo employs Single Page Templates in the following order of precedence in:
 
-- `/layouts/{type name}/{layout name}.html`
-- `/layouts/{section name}/{layout name}.html`
-- `/layouts/{type name}/single.html`
-- `/layouts/{section name}/single.html`
+- `/layouts/{type}/{layout}.html`
+- `/layouts/{section}/{layout}.html`
+- `/layouts/{type}/single.html`
+- `/layouts/{section}/single.html`
 - `/layouts/_default/single.html`
-- `/themes/{theme name}/layouts/{type name}/{layout name}.html`
-- `/themes/{theme name}/layouts/{section name}/{layout name}.html`
-- `/themes/{theme name}/layouts/{type name}/single.html`
-- `/themes/{theme name}/layouts/{section name}/single.html`
-- `/themes/{theme name}/layouts/_default/single.html`
+- `/themes/{theme}/layouts/{type}/{layout}.html`
+- `/themes/{theme}/layouts/{section}/{layout}.html`
+- `/themes/{theme}/layouts/{type}/single.html`
+- `/themes/{theme}/layouts/{section}/single.html`
+- `/themes/{theme}/layouts/_default/single.html`
 
 To make it consistent with Harbor's structure, I decided to override it by creating `/layouts/_default/single.html`.
 
