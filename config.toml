@@ -74,3 +74,6 @@ googleAnalytics = "UA-XXXXXXXX-XX"
   width = 50
   height = 50
   alt = "Logo"
+
+#[params]
+#  customCSS = ["/css/custom.css"]
