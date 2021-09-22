@@ -14,7 +14,7 @@ So I migrated to Utterances which implements the comment feature using GitHub Is
 # Background
 
 Hugo's Harbor theme, which I used in this blog, quickly implemented the comment function by setting `disqusShortName` in `config.toml`.
-However, since I'm using Disqus free plan, I've started to get ads sometimes.
+However, since I was using Disqus free plan, I've started to get ads sometimes.
 It was not so beautiful, so I decided to move to Utterances, which I've been interested in for a while.
 
 Utterances is a lightweight comment widget implemented using GitHub Issues.
