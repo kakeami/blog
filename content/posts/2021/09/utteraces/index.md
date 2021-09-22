@@ -2,7 +2,7 @@
 title: "From Disqus to Utterances"
 date: 2021-09-21
 tags: ["Hugo", "GitHub Pages", "Blog", "Utterances"]
-categories: ["Hugo"]
+categories: ["Programming"]
 draft: false
 ---
 

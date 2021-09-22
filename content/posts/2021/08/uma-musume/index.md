@@ -1,7 +1,7 @@
 ---
 title: "Uma Musume Pretty Derby Season 2 made me cry"
 date: 2021-08-24T08:40:44+09:00
-tags: ["Keiba", "Umamusume"]
+tags: ["Keiba", "Umamusume", "Horseracing"]
 categories: ["Animation"]
 draft: false
 ---

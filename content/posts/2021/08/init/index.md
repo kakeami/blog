@@ -2,7 +2,7 @@
 title: "Hugo + GitHub Pagesでブログを始めた"
 date: 2021-08-11T22:35:56+09:00
 tags: ["Hugo", "GitHub Pages", "Blog"]
-categories: ["Hugo"]
+categories: ["Programming"]
 draft: false
 ---
 
