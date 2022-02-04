@@ -1,6 +1,6 @@
 ---
 title: "PixelaとTodoistを連携した"
-date: 2022-02-05T05:40:44+09:00
+date: 2022-02-05
 tags: ["Pixela", "Todoist"]
 categories: ["Programming"]
 draft: false
