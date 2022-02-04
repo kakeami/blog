@@ -1,19 +1,19 @@
 ---
-title: "PixelaとTodoistを連携した"
+title: "Pixela$B$H(BTodoist$B$rO"7H$7$?(B"
 date: 2022-02-05
 tags: ["Pixela", "Todoist"]
 categories: ["Programming"]
 draft: false
 ---
 
-[Pixe.la](https://pixe.la/ja)と[Todoist](https://todoist.com/ja)を連携させて，タスクを完了するたびに草を生やすようにした．
+[Pixe.la](https://pixe.la/ja)$B$H(B[Todoist](https://todoist.com/ja)$B$rO"7H$5$;$F!$%?%9%/$r40N;$9$k$?$S$KAp$r@8$d$9$h$&$K$7$?!%(B
 
 <!--more-->
 
-# 参考
+# $B;29M(B
 
-後で書く
+$B8e$G=q$/(B
 
-# 結果
+# $B7k2L(B
 
 <iframe src="https://pixe.la/v1/users/kakeami/graphs/todoist.html?mode=simple" frameborder="0"></iframe>
