@@ -19,8 +19,12 @@ My dream is to go on a graduation trip with my family to the U.S. when I get my 
 I'm going to write some trivial technical notes that are not worth submitting on [Zenn](https://zenn.dev/) or [Qiita](https://qiita.com/).
 However, I may also write about things that have nothing to do with technology, such as my vegetable garden, cooking, and reading.
 
-## Contacts
+# Contacts
 
 - [GitHub - kakeami](https://github.com/kakeami)
 - [Zenn.dev - kakeami](https://zenn.dev/kakeami)
 - Email: `kakeami dot contact at gmail dot com`
+
+# Status
+
+<iframe src="https://pixe.la/v1/users/kakeami/graphs/todoist-graph.html?mode=simple" height="155" frameborder="0"></iframe>
