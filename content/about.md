@@ -25,6 +25,3 @@ However, I may also write about things that have nothing to do with technology, 
 - [Zenn.dev - kakeami](https://zenn.dev/kakeami)
 - Email: `kakeami dot contact at gmail dot com`
 
-# Status
-
-<iframe src="https://pixe.la/v1/users/kakeami/graphs/todoist-graph.html?mode=simple" height="155" frameborder="0"></iframe>
