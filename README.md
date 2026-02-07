@@ -37,7 +37,18 @@ The `pre-render` hook automatically runs `scripts/generate_og.py`, which generat
 1. Create `posts/YYYY-MM-topic/index.qmd`
 2. Run `quarto render` or `quarto preview`
 
-OG images and front matter are handled automatically — no manual steps needed.
+#### OG image options
+
+**Option A: Use a chart as the OG image**
+
+1. Add `og-source: chart` to the front matter
+2. In a hidden cell, call `fig.write_image("og-image.png", width=1200, height=630)`
+3. Run `quarto render`
+
+**Option B: Default (cat icon + pastel background)**
+
+1. Write the post
+2. Run `quarto render` — the OG image is generated automatically
 
 ### Deploy
 

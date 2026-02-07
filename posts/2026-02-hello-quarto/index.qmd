@@ -4,7 +4,8 @@ description: "A first post to verify the blog setup."
 date: "2026-02-07"
 categories: [news]
 image: og-image.png
-draft: true
+og-source: chart
+draft: false
 ---
 
 ## Welcome
@@ -18,4 +19,10 @@ df = px.data.iris()
 fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species",
                  title="Iris Dataset")
 fig.show()
+```
+
+```{python}
+#| echo: false
+#| output: false
+fig.write_image("og-image.png", width=1200, height=630)
 ```
