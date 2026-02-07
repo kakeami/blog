@@ -3,6 +3,7 @@ title: "Why I Chose Quarto for My Data Science Blog"
 description: "A comparison of static site generators for data scientists, and why Quarto came out on top."
 date: "2026-02-07"
 categories: [quarto, meta]
+image: og-image.png
 draft: false
 ---
 
