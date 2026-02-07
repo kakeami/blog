@@ -15,6 +15,7 @@ Usage:
 
 import colorsys
 import hashlib
+import re
 import sys
 from pathlib import Path
 
@@ -108,8 +109,28 @@ def main() -> None:
         slug = post_dir.name
         output = post_dir / "og-image.png"
         generate_og(circle_icon, slug, output)
+        ensure_image_frontmatter(post_dir / "index.qmd")
 
     print("Done.")
+
+
+def ensure_image_frontmatter(qmd_path: Path) -> None:
+    """Add 'image: og-image.png' to front matter if missing."""
+    text = qmd_path.read_text()
+
+    # Extract front matter block (between --- delimiters)
+    match = re.match(r"^---\n(.*?\n)---\n", text, re.DOTALL)
+    if not match:
+        return
+
+    frontmatter = match.group(1)
+    if re.search(r"^image:", frontmatter, re.MULTILINE):
+        return
+
+    # Insert image field before the closing ---
+    new_text = text[: match.end(1)] + "image: og-image.png\n" + text[match.end(1) :]
+    qmd_path.write_text(new_text)
+    print(f"  Added 'image: og-image.png' to {qmd_path.name}")
 
 
 if __name__ == "__main__":
