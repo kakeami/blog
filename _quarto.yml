@@ -14,6 +14,14 @@ website:
   site-url: "https://kakeami.github.io/blog"
   repo-url: "https://github.com/kakeami/blog"
   repo-actions: [edit, issue]
+  favicon: favicon.ico
+  open-graph:
+    image: /og-default.png
+    site-name: "Kakeami's Blog"
+  twitter-card:
+    image: /og-default.png
+    card-style: summary_large_image
+    creator: "@_kakeami"
 
   navbar:
     background: primary
