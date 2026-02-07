@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Coming soon."
+  },
+  {
+    "objectID": "projects.html#data-visualization-projects",
+    "href": "projects.html#data-visualization-projects",
+    "title": "Projects",
+    "section": "",
+    "text": "Coming soon."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Kakeami’s Blog",
+    "section": "",
+    "text": "Hello, Quarto!\n\n\n\nnews\n\n\n\nA first post to verify the blog setup.\n\n\n\n\n\nFeb 7, 2026\n\n\nKakeami\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I’m a data scientist and R&D researcher based in Tokyo, currently pursuing a Master’s in Computer Science at Georgia Institute of Technology (OMSCS).\nI published a two-volume book on data visualization with Gihyo (技術評論社), which teaches visualization principles through manga, anime, and game datasets — a reflection of my belief that data becomes more engaging when paired with subjects people genuinely care about."
+  },
+  {
+    "objectID": "about.html#what-i-write-about",
+    "href": "about.html#what-i-write-about",
+    "title": "About",
+    "section": "What I Write About",
+    "text": "What I Write About\n\nData visualization — techniques, tools (Plotly, Matplotlib), and the art of telling stories with data\nPop culture × statistics — exploring anime, manga, and games through the lens of exploratory data analysis\nLessons from side projects — what I learn from tracking every minute of my work with Toggl Track"
+  },
+  {
+    "objectID": "about.html#projects",
+    "href": "about.html#projects",
+    "title": "About",
+    "section": "Projects",
+    "text": "Projects\n\nviz-madb — An interactive exploration of ~47 years of manga publication data, covering 21 visualization techniques\nroad-to-vizbook — Visualizing the 1,161 hours it took to publish my data visualization books\nroad-to-gatech — Documenting the 572 hours of preparation for Georgia Tech admission"
+  },
+  {
+    "objectID": "about.html#fun-fact",
+    "href": "about.html#fun-fact",
+    "title": "About",
+    "section": "Fun Fact",
+    "text": "Fun Fact\nMy pen name “Kakeami” (かけあみ) comes from a crosshatching technique used in manga. I dreamed of becoming a manga artist until junior high — and while I traded the pen for Python, I never lost my love for the medium."
+  },
+  {
+    "objectID": "posts/2026-02-hello-quarto/index.html",
+    "href": "posts/2026-02-hello-quarto/index.html",
+    "title": "Hello, Quarto!",
+    "section": "",
+    "text": "This is a test post to confirm the Quarto blog is working correctly.\n\n\nCode\nimport plotly.express as px\n\ndf = px.data.iris()\nfig = px.scatter(df, x=\"sepal_width\", y=\"sepal_length\", color=\"species\",\n                 title=\"Iris Dataset\")\nfig.show()"
+  },
+  {
+    "objectID": "posts/2026-02-hello-quarto/index.html#welcome",
+    "href": "posts/2026-02-hello-quarto/index.html#welcome",
+    "title": "Hello, Quarto!",
+    "section": "",
+    "text": "This is a test post to confirm the Quarto blog is working correctly.\n\n\nCode\nimport plotly.express as px\n\ndf = px.data.iris()\nfig = px.scatter(df, x=\"sepal_width\", y=\"sepal_length\", color=\"species\",\n                 title=\"Iris Dataset\")\nfig.show()"
+  }
+]
