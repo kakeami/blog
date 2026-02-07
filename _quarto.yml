@@ -32,6 +32,18 @@ website:
   page-footer:
     center: "Built with [Quarto](https://quarto.org)"
 
+  comments:
+    giscus:
+      repo: kakeami/blog
+      repo-id: "R_kgDORKq9lA"
+      category: "Blog Comments"
+      category-id: "DIC_kwDORKq9lM4C2AaY"
+      mapping: pathname
+      reactions-enabled: true
+      input-position: bottom
+      theme: light
+      loading: lazy
+
 format:
   html:
     theme: cosmo
