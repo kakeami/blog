@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kakeami.github.io/blog/projects.html</loc>
-    <lastmod>2026-02-07T10:29:45.852Z</lastmod>
+    <loc>https://kakeami.github.io/blog/posts/2026-02-why-quarto/index.html</loc>
+    <lastmod>2026-02-07T11:04:08.235Z</lastmod>
   </url>
   <url>
     <loc>https://kakeami.github.io/blog/index.html</loc>
-    <lastmod>2026-02-07T10:29:45.850Z</lastmod>
+    <lastmod>2026-02-07T11:04:08.235Z</lastmod>
   </url>
   <url>
     <loc>https://kakeami.github.io/blog/about.html</loc>
-    <lastmod>2026-02-07T10:29:45.849Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kakeami.github.io/blog/posts/2026-02-hello-quarto/index.html</loc>
-    <lastmod>2026-02-07T10:29:45.851Z</lastmod>
+    <lastmod>2026-02-07T11:04:08.235Z</lastmod>
   </url>
 </urlset>
