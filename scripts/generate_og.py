@@ -84,13 +84,13 @@ def generate_og(circle_icon: Image.Image, slug: str, output_path: Path) -> None:
     print(f"  {output_path.relative_to(output_path.parent.parent)} -> RGB{bg_color}")
 
 
-def has_chart_og(qmd_path: Path) -> bool:
-    """Check if the post declares a chart-based OG image via og-source: chart."""
+def has_custom_og(qmd_path: Path) -> bool:
+    """Check if the post declares a custom OG image via og-source (chart, custom, etc.)."""
     text = qmd_path.read_text()
     match = re.match(r"^---\n(.*?\n)---\n", text, re.DOTALL)
     if not match:
         return False
-    return bool(re.search(r"^og-source:\s*chart\s*$", match.group(1), re.MULTILINE))
+    return bool(re.search(r"^og-source:\s*\S+", match.group(1), re.MULTILINE))
 
 
 def main() -> None:
@@ -119,8 +119,8 @@ def main() -> None:
         output = post_dir / "og-image.png"
         qmd_path = post_dir / "index.qmd"
 
-        if has_chart_og(qmd_path) and output.exists():
-            print(f"  {slug}: skipped (chart-based OG exists)")
+        if has_custom_og(qmd_path) and output.exists():
+            print(f"  {slug}: skipped (custom OG exists)")
         else:
             generate_og(circle_icon, slug, output)
 

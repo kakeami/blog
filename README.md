@@ -45,7 +45,13 @@ The `pre-render` hook automatically runs `scripts/generate_og.py`, which generat
 2. In a hidden cell, call `fig.write_image("og-image.png", width=1200, height=630)`
 3. Run `quarto render`
 
-**Option B: Default (cat icon + pastel background)**
+**Option B: Use a custom image (e.g. photo)**
+
+1. Add `og-source: custom` to the front matter
+2. Place `og-image.png` (1200x630 recommended) in the post directory
+3. Run `quarto render`
+
+**Option C: Default (cat icon + pastel background)**
 
 1. Write the post
 2. Run `quarto render` — the OG image is generated automatically
