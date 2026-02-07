@@ -1,0 +1,28 @@
+# === Private / Internal ===
+private/
+CLAUDE.md
+
+# === Python ===
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.ipynb_checkpoints/
+
+# === Quarto ===
+_site/
+/.quarto/
+**/*.quarto_ipynb
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo

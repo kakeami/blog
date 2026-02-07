@@ -1,0 +1,20 @@
+---
+title: "Hello, Quarto!"
+description: "A first post to verify the blog setup."
+date: "2026-02-07"
+categories: [news]
+draft: true
+---
+
+## Welcome
+
+This is a test post to confirm the Quarto blog is working correctly.
+
+```{python}
+import plotly.express as px
+
+df = px.data.iris()
+fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species",
+                 title="Iris Dataset")
+fig.show()
+```

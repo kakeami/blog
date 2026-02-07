@@ -1,0 +1,43 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+
+execute:
+  freeze: auto
+
+website:
+  title: "kakeami's blog"
+  description: "Data analysis, pop culture, and statistics"
+  site-url: "https://kakeami.github.io/blog"
+  repo-url: "https://github.com/kakeami/blog"
+  repo-actions: [edit, issue]
+
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Projects"
+        href: projects.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/kakeami
+      - icon: rss
+        href: index.xml
+
+  page-footer:
+    center: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    code-copy: true
+    code-overflow: wrap

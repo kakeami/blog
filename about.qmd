@@ -1,0 +1,11 @@
+---
+title: "About"
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/kakeami
+---
+
+Welcome to my blog. I write about data analysis, pop culture, and statistics.

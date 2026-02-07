@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Remove Co-Authored-By lines from commit messages.
+# Also strips any resulting trailing blank lines.
+
+commit_msg_file="$1"
+
+sed -i '' '/^[[:space:]]*Co-Authored-By:/d' "$commit_msg_file"
+
+# Remove trailing blank lines
+while [[ "$(tail -c 1 "$commit_msg_file" | wc -l)" -gt 0 ]] && \
+      [[ "$(tail -1 "$commit_msg_file")" =~ ^[[:space:]]*$ ]]; do
+    sed -i '' '$ d' "$commit_msg_file"
+done

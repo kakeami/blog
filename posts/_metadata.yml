@@ -1,0 +1,13 @@
+author: "kakeami"
+date-format: "MMMM D, YYYY"
+lang: en
+
+execute:
+  echo: true
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
