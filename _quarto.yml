@@ -9,7 +9,7 @@ execute:
   freeze: auto
 
 website:
-  title: "kakeami's blog"
+  title: "Kakeami's Blog"
   description: "Data analysis, pop culture, and statistics"
   site-url: "https://kakeami.github.io/blog"
   repo-url: "https://github.com/kakeami/blog"

@@ -1,11 +1,34 @@
 ---
 title: "About"
 about:
-  template: jolla
+  template: solana
   links:
     - icon: github
       text: GitHub
       href: https://github.com/kakeami
+    - icon: twitter
+      text: X (Twitter)
+      href: https://x.com/_kakeami
+    - text: Zenn
+      href: https://zenn.dev/kakeami
 ---
 
-Welcome to my blog. I write about data analysis, pop culture, and statistics.
+I'm a data scientist and R&D researcher based in Tokyo, currently pursuing a Master's in Computer Science at Georgia Institute of Technology (OMSCS).
+
+I published a two-volume book on data visualization with [Gihyo (技術評論社)](https://gihyo.jp/book/2026/978-4-297-15271-0), which teaches visualization principles through manga, anime, and game datasets — a reflection of my belief that data becomes more engaging when paired with subjects people genuinely care about.
+
+## What I Write About
+
+- **Data visualization** — techniques, tools (Plotly, Matplotlib), and the art of telling stories with data
+- **Pop culture × statistics** — exploring anime, manga, and games through the lens of exploratory data analysis
+- **Lessons from side projects** — what I learn from tracking every minute of my work with Toggl Track
+
+## Projects
+
+- [**viz-madb**](https://kakeami.github.io/viz-madb/) — An interactive exploration of ~47 years of manga publication data, covering 21 visualization techniques
+- [**road-to-vizbook**](https://kakeami.github.io/road-to-vizbook/) — Visualizing the 1,161 hours it took to publish my data visualization books
+- [**road-to-gatech**](https://kakeami.github.io/road-to-gatech/) — Documenting the 572 hours of preparation for Georgia Tech admission
+
+## Fun Fact
+
+My pen name "Kakeami" (かけあみ) comes from a crosshatching technique used in manga. I dreamed of becoming a manga artist until junior high — and while I traded the pen for Python, I never lost my love for the medium.
