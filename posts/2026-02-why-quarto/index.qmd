@@ -84,6 +84,10 @@ The Quarto community generally recommends `.qmd` files over `.ipynb` for blog po
 
 Each post lives in its own directory (`posts/YYYY-MM-topic/index.qmd`), which keeps assets (images, data files) organized alongside the content. This is Quarto's recommended convention and it works well.
 
+### Comments with giscus
+
+Quarto has built-in support for [giscus](https://giscus.app/), a comment system powered by GitHub Discussions. A few lines of YAML in `_quarto.yml` and every post gets a comment widget — no JavaScript snippets to paste, no third-party accounts to manage. Readers authenticate with their GitHub account, which is a reasonable assumption for a data science audience. Comments are stored as GitHub Discussions threads, so they're searchable, support Markdown, and won't disappear if I ever switch hosting providers.
+
 ## What's Next
 
 This blog is just getting started. Here's what I'm planning to write about:
@@ -92,4 +96,4 @@ This blog is just getting started. Here's what I'm planning to write about:
 - **Visualization techniques** — Deep dives into specific chart types, when to use them, and how to build them in Plotly.
 - **Lessons from side projects** — I've tracked over 1,000 hours of work with Toggl Track. There are stories in that data.
 
-If any of that sounds interesting, the [RSS feed](/blog/index.xml) is the best way to follow along.
+If any of that sounds interesting, the [RSS feed](/index.xml) is the best way to follow along.
