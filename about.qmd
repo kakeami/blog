@@ -3,6 +3,7 @@ title: "About"
 comments: false
 about:
   template: solana
+  image: /icon.png
   links:
     - icon: github
       text: GitHub
