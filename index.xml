@@ -95,6 +95,80 @@
 <h3 class="anchored" data-anchor-id="comments-with-giscus">Comments with giscus</h3>
 <p>Quarto has built-in support for <a href="https://giscus.app/">giscus</a>, a comment system powered by GitHub Discussions. A few lines of YAML in <code>_quarto.yml</code> and every post gets a comment widget — no JavaScript snippets to paste, no third-party accounts to manage. Readers authenticate with their GitHub account, which is a reasonable assumption for a data science audience. Comments are stored as GitHub Discussions threads, so they’re searchable, support Markdown, and won’t disappear if I ever switch hosting providers.</p>
 </section>
+<section id="og-images-with-a-personal-touch" class="level3">
+<h3 class="anchored" data-anchor-id="og-images-with-a-personal-touch">OG images with a personal touch</h3>
+<p>When you share a blog post on X or Slack, the preview card is the first thing people see. I wanted each post to have a distinct card rather than a generic default, but I also didn’t want to manually design one for every article.</p>
+<p>The solution was a small Python script (<a href="https://github.com/kakeami/blog/blob/main/scripts/generate_og.py"><code>generate_og.py</code></a>) that takes the blog’s cat icon, crops it into a circle, and places it on a pastel background. The key trick: the background color is derived from each post’s directory name via MD5 hash, mapped to the HSL color space with fixed saturation and lightness. This means every post gets a unique but consistently gentle color, and the same post always produces the same image — no randomness, no manual color picking.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> slug_to_pastel(slug: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">tuple</span>[<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>, <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>, <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>]:</span>
+<span id="cb1-2">    hv <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(hashlib.md5(slug.encode()).hexdigest(), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">16</span>)</span>
+<span id="cb1-3">    hue <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (hv <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">360</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">360.0</span></span>
+<span id="cb1-4">    r, g, b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> colorsys.hls_to_rgb(hue, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.88</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.40</span>)</span>
+<span id="cb1-5">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> (<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(r <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">255</span>), <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(g <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">255</span>), <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">255</span>))</span></code></pre></div></div>
+<p>The circle cropping required some care. My icon isn’t transparent — it’s a black line drawing on a white background. The script places the source image on a canvas sized to fit the full circle, applies a circular mask, then scales and centers the result on a 1200×630 background. The circle center is shifted slightly upward so the cat’s ears sit comfortably inside while the clothing is naturally clipped at the bottom.</p>
+<p>Quarto’s <code>open-graph</code> and <code>twitter-card</code> configuration in <code>_quarto.yml</code> handles the meta tags, and each post’s <code>image</code> field in the front matter points to its generated <code>og-image.png</code>. The whole workflow for a new post is just:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">python</span> scripts/generate_og.py</span></code></pre></div></div>
+<p>Later, when posts include data visualizations, I plan to replace these generated images with actual chart screenshots — but having a consistent fallback from day one means every post looks intentional when shared.</p>
+</section>
 </section>
 <section id="whats-next" class="level2">
 <h2 class="anchored" data-anchor-id="whats-next">What’s Next</h2>
