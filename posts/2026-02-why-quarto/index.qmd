@@ -89,6 +89,30 @@ Each post lives in its own directory (`posts/YYYY-MM-topic/index.qmd`), which ke
 
 Quarto has built-in support for [giscus](https://giscus.app/), a comment system powered by GitHub Discussions. A few lines of YAML in `_quarto.yml` and every post gets a comment widget — no JavaScript snippets to paste, no third-party accounts to manage. Readers authenticate with their GitHub account, which is a reasonable assumption for a data science audience. Comments are stored as GitHub Discussions threads, so they're searchable, support Markdown, and won't disappear if I ever switch hosting providers.
 
+### OG images with a personal touch
+
+When you share a blog post on X or Slack, the preview card is the first thing people see. I wanted each post to have a distinct card rather than a generic default, but I also didn't want to manually design one for every article.
+
+The solution was a small Python script ([`generate_og.py`](https://github.com/kakeami/blog/blob/main/scripts/generate_og.py)) that takes the blog's cat icon, crops it into a circle, and places it on a pastel background. The key trick: the background color is derived from each post's directory name via MD5 hash, mapped to the HSL color space with fixed saturation and lightness. This means every post gets a unique but consistently gentle color, and the same post always produces the same image — no randomness, no manual color picking.
+
+```python
+def slug_to_pastel(slug: str) -> tuple[int, int, int]:
+    hv = int(hashlib.md5(slug.encode()).hexdigest(), 16)
+    hue = (hv % 360) / 360.0
+    r, g, b = colorsys.hls_to_rgb(hue, 0.88, 0.40)
+    return (int(r * 255), int(g * 255), int(b * 255))
+```
+
+The circle cropping required some care. My icon isn't transparent — it's a black line drawing on a white background. The script places the source image on a canvas sized to fit the full circle, applies a circular mask, then scales and centers the result on a 1200×630 background. The circle center is shifted slightly upward so the cat's ears sit comfortably inside while the clothing is naturally clipped at the bottom.
+
+Quarto's `open-graph` and `twitter-card` configuration in `_quarto.yml` handles the meta tags, and each post's `image` field in the front matter points to its generated `og-image.png`. The whole workflow for a new post is just:
+
+```bash
+python scripts/generate_og.py
+```
+
+Later, when posts include data visualizations, I plan to replace these generated images with actual chart screenshots — but having a consistent fallback from day one means every post looks intentional when shared.
+
 ## What's Next
 
 This blog is just getting started. Here's what I'm planning to write about:
