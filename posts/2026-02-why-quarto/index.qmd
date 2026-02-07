@@ -1,0 +1,95 @@
+---
+title: "Why I Chose Quarto for My Data Science Blog"
+description: "A comparison of static site generators for data scientists, and why Quarto came out on top."
+date: "2026-02-07"
+categories: [quarto, meta]
+draft: false
+---
+
+## Introduction
+
+When I decided to start a data science blog, choosing the right static site generator felt like a surprisingly difficult problem. My requirements were specific:
+
+1. **Native notebook support** — I wanted to write posts that mix prose and executable code without maintaining a separate conversion pipeline.
+2. **Plotly support** — Interactive visualizations are central to my work. Static screenshots wouldn't cut it.
+3. **Blog features out of the box** — Post listings, categories, RSS feeds, drafts. I didn't want to build these from scratch.
+4. **GitHub Pages deployment** — Simple, free, and version-controlled.
+
+No single tool checks all four boxes effortlessly. But after surveying the landscape, one came closest.
+
+## The Landscape
+
+Before committing, I looked at what prominent data scientists and ML engineers actually use for their blogs. I surveyed about 15 well-known bloggers — Lilian Weng (OpenAI), Andrej Karpathy, Sebastian Raschka, Eugene Yan (Amazon), Chip Huyen, Chris Olah (Anthropic), Rachel Thomas (fast.ai), and others.
+
+The results were revealing:
+
+- **Jekyll and Hugo dominate.** Most established DS/ML bloggers use one of these two. They're battle-tested and have massive ecosystems.
+- **Quarto has a foothold in the fast.ai and R/statistics community.** Rachel Thomas, Jeremy Howard, Hamel Husain, and Andrew Heiss all run Quarto-powered blogs.
+- **Substack is rising as a complementary channel.** Several bloggers maintain both a self-hosted site (for SEO and permanence) and a Substack (for email distribution).
+- **Most don't use interactive visualizations.** This surprised me. The majority rely on static figures and strong writing. The few who do use interactive elements — Chris Olah with D3.js, Jay Alammar with custom JavaScript — have built distinctive brands around them.
+
+That last point is worth emphasizing: interactive visualization isn't a requirement for a successful DS blog, but it *is* a differentiator. Since my background is in data visualization (I wrote a [two-volume book](https://gihyo.jp/book/2026/978-4-297-15271-0) on the subject), leaning into interactivity felt like the right move.
+
+## Why Not the Others
+
+Each of the major options has genuine strengths. Here's why they didn't quite fit *my* needs:
+
+### Hugo
+
+Hugo is the speed champion — builds are nearly instant, and its theme ecosystem is unmatched. Lilian Weng's beautiful blog runs on Hugo with PaperMod. But Hugo has no native notebook support. To publish a Jupyter notebook, you need an external conversion step (typically `nbconvert` to Markdown), and Plotly widgets require manual handling of the generated HTML/JSON. For a blog centered on executable, interactive content, this adds friction I wanted to avoid.
+
+### Jekyll
+
+Jekyll powered the first wave of GitHub Pages blogs and still runs sites like Eugene Yan's and Chip Huyen's. Its ecosystem is mature and well-documented. But like Hugo, notebook integration requires an external pipeline. The fast.ai team originally built [fastpages](https://github.com/fastai/fastpages) to bridge this gap — and then deprecated it in favor of Quarto, which tells you something about the state of that approach.
+
+### Jupyter Book
+
+Jupyter Book is excellent for what it was designed for: structured, book-like documentation and teaching materials. My own [viz-madb](https://kakeami.github.io/viz-madb/) project uses it. But Jupyter Book was never built for blogging. Version 1.x has no blog features (the [feature request](https://github.com/jupyter/jupyter-book/issues/900) has been open for over five years). Version 2.0, rebuilt on MyST, is actively developed — but even the project leader, Chris Holdgraf, had to write custom Python plugins to get basic blog functionality (post listings, RSS, categories) working on his own site. The blog story for JB2 remains a work in progress.
+
+### Nikola
+
+Nikola deserves more attention than it gets. It has native `.ipynb` support — just drop a notebook in and it becomes a post. Blog features are solid. For a pure "notebook to blog" workflow with minimal configuration, Nikola might actually be the simplest option. Ultimately, I chose against it because the theme ecosystem is small, the community is niche, and I was less confident about long-term support compared to a tool backed by a well-funded company.
+
+## Why Quarto
+
+Quarto won me over for a combination of practical and strategic reasons:
+
+**Blog features are built in.** Post listings with multiple layouts, categories and tags, RSS feeds, draft mode, pagination — it all works out of the box with a few lines of YAML. No plugins, no custom scripts.
+
+**Notebook support is native.** Quarto understands `.qmd` files (Markdown with executable code blocks) and `.ipynb` files natively. The `.qmd` format is particularly nice: it's plain text, diffs cleanly in Git, and feels like writing Markdown with superpowers.
+
+**Posit backs it.** Quarto is developed by [Posit](https://posit.co/) (formerly RStudio), a company with $175M in funding and a long track record of building tools for data practitioners. This isn't a side project that might be abandoned.
+
+**The fast.ai endorsement matters.** When the fast.ai team — who built fastpages specifically to solve the "notebook to blog" problem — decided to deprecate their own tool and recommend Quarto instead, that was a strong signal. Rachel Thomas, Jeremy Howard, and Hamel Husain all migrated.
+
+**Real-world adoption is growing.** Beyond fast.ai, the Royal Statistical Society publishes [Real World Data Science](https://realworlddatascience.net/) on Quarto. Andrew Heiss runs his statistics blog on it. Sayak Paul at Hugging Face uses it. The community is smaller than Hugo's, but it's exactly the community I want to be part of.
+
+## Setup Decisions
+
+A few technical choices I made during setup, in case they're useful to others:
+
+### Plotly 5.24.1, not 6.x
+
+Plotly 6.0 introduced a breaking change that causes a `kP.select is not a function` error in Quarto-rendered pages. The issue has been [reported](https://github.com/plotly/plotly.py/issues/12061) but remains unresolved as of February 2026. Pinning to `plotly==5.24.1` avoids the problem entirely, and Plotly 5.x is feature-complete for my needs.
+
+### Freeze for caching
+
+Quarto's `freeze: auto` option caches computation results so that only modified posts are re-executed on build. This is essential for a blog with data-heavy posts — you don't want every `quarto render` to re-run every notebook. The `_freeze/` directory is committed to Git so that CI builds (via GitHub Actions) can use the cache without re-executing code.
+
+### .qmd over .ipynb
+
+The Quarto community generally recommends `.qmd` files over `.ipynb` for blog posts, and I agree. Notebooks are JSON under the hood, which makes Git diffs noisy and merges painful. `.qmd` files are plain Markdown with fenced code blocks — they diff like any other text file. For posts that are primarily prose with some code, `.qmd` is the clear winner.
+
+### Directory structure
+
+Each post lives in its own directory (`posts/YYYY-MM-topic/index.qmd`), which keeps assets (images, data files) organized alongside the content. This is Quarto's recommended convention and it works well.
+
+## What's Next
+
+This blog is just getting started. Here's what I'm planning to write about:
+
+- **Pop culture data analysis** — Exploring anime, manga, and game datasets with interactive visualizations. This is the core of what I do and what I find most fun.
+- **Visualization techniques** — Deep dives into specific chart types, when to use them, and how to build them in Plotly.
+- **Lessons from side projects** — I've tracked over 1,000 hours of work with Toggl Track. There are stories in that data.
+
+If any of that sounds interesting, the [RSS feed](/blog/index.xml) is the best way to follow along.

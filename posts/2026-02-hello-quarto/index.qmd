@@ -3,7 +3,7 @@ title: "Hello, Quarto!"
 description: "A first post to verify the blog setup."
 date: "2026-02-07"
 categories: [news]
-draft: false
+draft: true
 ---
 
 ## Welcome
