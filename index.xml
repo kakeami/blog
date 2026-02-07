@@ -91,6 +91,10 @@
 <h3 class="anchored" data-anchor-id="directory-structure">Directory structure</h3>
 <p>Each post lives in its own directory (<code>posts/YYYY-MM-topic/index.qmd</code>), which keeps assets (images, data files) organized alongside the content. This is Quarto’s recommended convention and it works well.</p>
 </section>
+<section id="comments-with-giscus" class="level3">
+<h3 class="anchored" data-anchor-id="comments-with-giscus">Comments with giscus</h3>
+<p>Quarto has built-in support for <a href="https://giscus.app/">giscus</a>, a comment system powered by GitHub Discussions. A few lines of YAML in <code>_quarto.yml</code> and every post gets a comment widget — no JavaScript snippets to paste, no third-party accounts to manage. Readers authenticate with their GitHub account, which is a reasonable assumption for a data science audience. Comments are stored as GitHub Discussions threads, so they’re searchable, support Markdown, and won’t disappear if I ever switch hosting providers.</p>
+</section>
 </section>
 <section id="whats-next" class="level2">
 <h2 class="anchored" data-anchor-id="whats-next">What’s Next</h2>
@@ -100,7 +104,7 @@
 <li><strong>Visualization techniques</strong> — Deep dives into specific chart types, when to use them, and how to build them in Plotly.</li>
 <li><strong>Lessons from side projects</strong> — I’ve tracked over 1,000 hours of work with Toggl Track. There are stories in that data.</li>
 </ul>
-<p>If any of that sounds interesting, the <a href="../../blog/index.xml">RSS feed</a> is the best way to follow along.</p>
+<p>If any of that sounds interesting, the <a href="../../index.xml">RSS feed</a> is the best way to follow along.</p>
 
 
 <!-- -->

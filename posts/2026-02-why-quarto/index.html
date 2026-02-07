@@ -180,6 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#freeze-for-caching" id="toc-freeze-for-caching" class="nav-link" data-scroll-target="#freeze-for-caching">Freeze for caching</a></li>
   <li><a href="#qmd-over-.ipynb" id="toc-qmd-over-.ipynb" class="nav-link" data-scroll-target="#qmd-over-.ipynb">.qmd over .ipynb</a></li>
   <li><a href="#directory-structure" id="toc-directory-structure" class="nav-link" data-scroll-target="#directory-structure">Directory structure</a></li>
+  <li><a href="#comments-with-giscus" id="toc-comments-with-giscus" class="nav-link" data-scroll-target="#comments-with-giscus">Comments with giscus</a></li>
   </ul></li>
   <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next">What’s Next</a></li>
   </ul>
@@ -299,6 +300,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="directory-structure">Directory structure</h3>
 <p>Each post lives in its own directory (<code>posts/YYYY-MM-topic/index.qmd</code>), which keeps assets (images, data files) organized alongside the content. This is Quarto’s recommended convention and it works well.</p>
 </section>
+<section id="comments-with-giscus" class="level3">
+<h3 class="anchored" data-anchor-id="comments-with-giscus">Comments with giscus</h3>
+<p>Quarto has built-in support for <a href="https://giscus.app/">giscus</a>, a comment system powered by GitHub Discussions. A few lines of YAML in <code>_quarto.yml</code> and every post gets a comment widget — no JavaScript snippets to paste, no third-party accounts to manage. Readers authenticate with their GitHub account, which is a reasonable assumption for a data science audience. Comments are stored as GitHub Discussions threads, so they’re searchable, support Markdown, and won’t disappear if I ever switch hosting providers.</p>
+</section>
 </section>
 <section id="whats-next" class="level2">
 <h2 class="anchored" data-anchor-id="whats-next">What’s Next</h2>
@@ -308,7 +313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Visualization techniques</strong> — Deep dives into specific chart types, when to use them, and how to build them in Plotly.</li>
 <li><strong>Lessons from side projects</strong> — I’ve tracked over 1,000 hours of work with Toggl Track. There are stories in that data.</li>
 </ul>
-<p>If any of that sounds interesting, the <a href="../../blog/index.xml">RSS feed</a> is the best way to follow along.</p>
+<p>If any of that sounds interesting, the <a href="../../index.xml">RSS feed</a> is the best way to follow along.</p>
 
 
 <!-- -->
@@ -882,15 +887,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Each post lives in its own directory (<span class="in">`posts/YYYY-MM-topic/index.qmd`</span>), which keeps assets (images, data files) organized alongside the content. This is Quarto's recommended convention and it works well.</span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## What's Next</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="fu">### Comments with giscus</span></span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>This blog is just getting started. Here's what I'm planning to write about:</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>Quarto has built-in support for <span class="co">[</span><span class="ot">giscus</span><span class="co">](https://giscus.app/)</span>, a comment system powered by GitHub Discussions. A few lines of YAML in <span class="in">`_quarto.yml`</span> and every post gets a comment widget — no JavaScript snippets to paste, no third-party accounts to manage. Readers authenticate with their GitHub account, which is a reasonable assumption for a data science audience. Comments are stored as GitHub Discussions threads, so they're searchable, support Markdown, and won't disappear if I ever switch hosting providers.</span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Pop culture data analysis** — Exploring anime, manga, and game datasets with interactive visualizations. This is the core of what I do and what I find most fun.</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Visualization techniques** — Deep dives into specific chart types, when to use them, and how to build them in Plotly.</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Lessons from side projects** — I've tracked over 1,000 hours of work with Toggl Track. There are stories in that data.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## What's Next</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>This blog is just getting started. Here's what I'm planning to write about:</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>If any of that sounds interesting, the <span class="co">[</span><span class="ot">RSS feed</span><span class="co">](/blog/index.xml)</span> is the best way to follow along.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Pop culture data analysis** — Exploring anime, manga, and game datasets with interactive visualizations. This is the core of what I do and what I find most fun.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Visualization techniques** — Deep dives into specific chart types, when to use them, and how to build them in Plotly.</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Lessons from side projects** — I've tracked over 1,000 hours of work with Toggl Track. There are stories in that data.</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>If any of that sounds interesting, the <span class="co">[</span><span class="ot">RSS feed</span><span class="co">](/index.xml)</span> is the best way to follow along.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
