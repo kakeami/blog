@@ -219,11 +219,11 @@ font-style: inherit;">;</span></span>
 <section id="og-images-with-a-personal-touch" class="level3">
 <h3 class="anchored" data-anchor-id="og-images-with-a-personal-touch">OG images with a personal touch</h3>
 <p>When you share a blog post on X or Slack, the preview card is the first thing people see. I wanted each post to have a distinct card rather than a generic default, but I also didn’t want to manually design one for every article.</p>
-<p>The solution was a small Python script (<a href="https://github.com/kakeami/blog/blob/main/scripts/generate_og.py"><code>generate_og.py</code></a>) that takes the blog’s cat icon, crops it into a circle, and places it on a pastel background. The key trick: the background color is derived from each post’s directory name via MD5 hash, mapped to the HSL color space with fixed saturation and lightness. This means every post gets a unique but consistently gentle color, and the same post always produces the same image — no randomness, no manual color picking.</p>
+<p>The solution was a small Python script (<a href="https://github.com/kakeami/blog/blob/main/scripts/generate_og.py"><code>generate_og.py</code></a>) that takes the blog’s cat icon, crops it into a circle, and places it on a Viridis-tinted background — keeping the OG images consistent with the site’s overall color theme. The background color is derived from each post’s directory name via MD5 hash, mapped to a position on the Viridis colormap and then lightened so the cat icon remains clearly visible. This means every post gets a unique but cohesive color, and the same post always produces the same image — no randomness, no manual color picking.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
-font-style: inherit;">def</span> slug_to_pastel(slug: <span class="bu" style="color: null;
+font-style: inherit;">def</span> slug_to_viridis(slug: <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">str</span>) <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -243,25 +243,57 @@ background-color: null;
 font-style: inherit;">int</span>(hashlib.md5(slug.encode()).hexdigest(), <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">16</span>)</span>
-<span id="cb4-3">    hue <span class="op" style="color: #5E5E5E;
+<span id="cb4-3">    t <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> (hv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">360</span>) <span class="op" style="color: #5E5E5E;
+font-style: inherit;">10000</span>) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">/</span> <span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">360.0</span></span>
-<span id="cb4-4">    r, g, b <span class="op" style="color: #5E5E5E;
+font-style: inherit;">10000.0</span></span>
+<span id="cb4-4">    r, g, b, _ <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span> colorsys.hls_to_rgb(hue, <span class="fl" style="color: #AD0000;
+font-style: inherit;">=</span> cm.viridis(t)</span>
+<span id="cb4-5">    <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">0.88</span>, <span class="fl" style="color: #AD0000;
+font-style: inherit;"># Lighten: blend toward white</span></span>
+<span id="cb4-6">    r <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">0.40</span>)</span>
-<span id="cb4-5">    <span class="cf" style="color: #003B4F;
+font-style: inherit;">=</span> r <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> (<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.0</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> r) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> VIRIDIS_LIGHTEN</span>
+<span id="cb4-7">    g <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> g <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> (<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.0</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> g) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> VIRIDIS_LIGHTEN</span>
+<span id="cb4-8">    b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> (<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.0</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> b) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> VIRIDIS_LIGHTEN</span>
+<span id="cb4-9">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> (<span class="bu" style="color: null;
