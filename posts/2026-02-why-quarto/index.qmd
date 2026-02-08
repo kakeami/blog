@@ -133,13 +133,17 @@ The navbar uses a purple-to-teal gradient, links are teal with yellow-green hove
 
 When you share a blog post on X or Slack, the preview card is the first thing people see. I wanted each post to have a distinct card rather than a generic default, but I also didn't want to manually design one for every article.
 
-The solution was a small Python script ([`generate_og.py`](https://github.com/kakeami/blog/blob/main/scripts/generate_og.py)) that takes the blog's cat icon, crops it into a circle, and places it on a pastel background. The key trick: the background color is derived from each post's directory name via MD5 hash, mapped to the HSL color space with fixed saturation and lightness. This means every post gets a unique but consistently gentle color, and the same post always produces the same image — no randomness, no manual color picking.
+The solution was a small Python script ([`generate_og.py`](https://github.com/kakeami/blog/blob/main/scripts/generate_og.py)) that takes the blog's cat icon, crops it into a circle, and places it on a Viridis-tinted background — keeping the OG images consistent with the site's overall color theme. The background color is derived from each post's directory name via MD5 hash, mapped to a position on the Viridis colormap and then lightened so the cat icon remains clearly visible. This means every post gets a unique but cohesive color, and the same post always produces the same image — no randomness, no manual color picking.
 
 ```python
-def slug_to_pastel(slug: str) -> tuple[int, int, int]:
+def slug_to_viridis(slug: str) -> tuple[int, int, int]:
     hv = int(hashlib.md5(slug.encode()).hexdigest(), 16)
-    hue = (hv % 360) / 360.0
-    r, g, b = colorsys.hls_to_rgb(hue, 0.88, 0.40)
+    t = (hv % 10000) / 10000.0
+    r, g, b, _ = cm.viridis(t)
+    # Lighten: blend toward white
+    r = r + (1.0 - r) * VIRIDIS_LIGHTEN
+    g = g + (1.0 - g) * VIRIDIS_LIGHTEN
+    b = b + (1.0 - b) * VIRIDIS_LIGHTEN
     return (int(r * 255), int(g * 255), int(b * 255))
 ```
 

@@ -19,6 +19,7 @@ import re
 import sys
 from pathlib import Path
 
+import matplotlib.cm as cm
 from PIL import Image, ImageDraw
 
 # --- Configuration ---
@@ -30,16 +31,24 @@ CIRCLE_RADIUS = 390
 CX_SRC, CY_SRC = 440, 382
 # Circle diameter in OG image
 TARGET_DIAMETER = 540
-# HSL parameters for pastel background
-SATURATION = 0.40
-LIGHTNESS = 0.88
+# Lightness boost for Viridis background (0.0 = original, 1.0 = white)
+VIRIDIS_LIGHTEN = 0.65
 
 
-def slug_to_pastel(slug: str) -> tuple[int, int, int]:
-    """Convert a slug to a deterministic pastel RGB color."""
+def slug_to_viridis(slug: str) -> tuple[int, int, int]:
+    """Convert a slug to a deterministic Viridis-based RGB color.
+
+    Maps the slug's MD5 hash to a position on the Viridis colormap,
+    then lightens the result so it works as a background behind the
+    white-circled cat icon.
+    """
     hv = int(hashlib.md5(slug.encode()).hexdigest(), 16)
-    hue = (hv % 360) / 360.0
-    r, g, b = colorsys.hls_to_rgb(hue, LIGHTNESS, SATURATION)
+    t = (hv % 10000) / 10000.0
+    r, g, b, _ = cm.viridis(t)
+    # Lighten: blend toward white
+    r = r + (1.0 - r) * VIRIDIS_LIGHTEN
+    g = g + (1.0 - g) * VIRIDIS_LIGHTEN
+    b = b + (1.0 - b) * VIRIDIS_LIGHTEN
     return (int(r * 255), int(g * 255), int(b * 255))
 
 
@@ -70,7 +79,7 @@ def build_circle_icon(icon_path: Path) -> Image.Image:
 
 def generate_og(circle_icon: Image.Image, slug: str, output_path: Path) -> None:
     """Generate an OG image for a given slug."""
-    bg_color = slug_to_pastel(slug)
+    bg_color = slug_to_viridis(slug)
     og = Image.new("RGBA", (OG_WIDTH, OG_HEIGHT), bg_color + (255,))
 
     scale = TARGET_DIAMETER / (CIRCLE_RADIUS * 2)
