@@ -24,6 +24,8 @@ website:
     card-style: summary_large_image
     creator: "@_kakeami"
 
+  google-analytics: "G-XCV7KVWVEV"
+
   navbar:
     background: primary
     search: true
