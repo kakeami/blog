@@ -32,7 +32,7 @@ CX_SRC, CY_SRC = 440, 382
 # Circle diameter in OG image
 TARGET_DIAMETER = 540
 # Lightness boost for Viridis background (0.0 = original, 1.0 = white)
-VIRIDIS_LIGHTEN = 0.65
+VIRIDIS_LIGHTEN = 0.78
 
 
 def slug_to_viridis(slug: str) -> tuple[int, int, int]:
