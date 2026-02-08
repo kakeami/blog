@@ -1,0 +1,61 @@
+/*-- scss:defaults --*/
+$primary: #440154;
+$link-color: #1f9e89;
+
+/*-- scss:rules --*/
+
+// Navbar: Viridis gradient (purple to teal)
+.navbar {
+  background: linear-gradient(135deg, #440154, #31688e) !important;
+}
+
+// Link hover: yellow-green
+a:hover {
+  color: #6cce5a !important;
+}
+
+// Footer: dark purple with subtle gradient
+.nav-footer {
+  background: linear-gradient(135deg, #440154, #482777) !important;
+  color: #f8f9fa;
+}
+
+.nav-footer a {
+  color: #6cce5a;
+}
+
+.nav-footer a:hover {
+  color: #6cce5a;
+}
+
+// Category badges: teal
+.quarto-category {
+  background-color: #31688e !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+// Code block accent
+div.sourceCode {
+  border-left: 3px solid #1f9e89;
+}
+
+// Sidebar active link
+.sidebar nav[role="doc-toc"] a.active {
+  border-left-color: #1f9e89;
+  color: #440154;
+}
+
+// Search button and navbar icons
+.navbar .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #fde725;
+}
+
+.navbar .navbar-title {
+  color: #fff;
+  font-weight: 600;
+}

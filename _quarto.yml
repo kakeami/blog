@@ -35,6 +35,8 @@ website:
       - text: "About"
         href: about.qmd
     right:
+      - icon: twitter-x
+        href: https://x.com/_kakeami
       - icon: github
         href: https://github.com/kakeami
       - icon: rss
@@ -57,7 +59,9 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme:
+      - cosmo
+      - custom.scss
     css: styles.css
     toc: true
     code-copy: true

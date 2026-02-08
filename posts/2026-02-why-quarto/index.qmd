@@ -89,6 +89,46 @@ Each post lives in its own directory (`posts/YYYY-MM-topic/index.qmd`), which ke
 
 Quarto has built-in support for [giscus](https://giscus.app/), a comment system powered by GitHub Discussions. A few lines of YAML in `_quarto.yml` and every post gets a comment widget — no JavaScript snippets to paste, no third-party accounts to manage. Readers authenticate with their GitHub account, which is a reasonable assumption for a data science audience. Comments are stored as GitHub Discussions threads, so they're searchable, support Markdown, and won't disappear if I ever switch hosting providers.
 
+### Google Analytics in one line
+
+Quarto has native Google Analytics support. No script tags to paste, no template modifications — just one line in `_quarto.yml`:
+
+```yaml
+website:
+  google-analytics: "G-XXXXXXXXXX"
+```
+
+Quarto auto-detects whether you're using GA4 (`G-` prefix) or the legacy Universal Analytics (`UA-` prefix) and generates the appropriate tracking code. The measurement ID is public by design — it's embedded in every page's HTML, so there's no security concern about committing it to a public repository.
+
+### Viridis-themed design with SCSS
+
+Quarto ships with 25 [Bootswatch](https://bootswatch.com/) themes, and any of them can be extended with custom SCSS. I started with the `cosmo` theme and layered a custom stylesheet on top:
+
+```yaml
+format:
+  html:
+    theme:
+      - cosmo
+      - custom.scss
+```
+
+For the color scheme, I chose [Viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html) — the perceptually uniform colormap that's ubiquitous in data visualization. It felt fitting for a data viz blog: readers who recognize it will immediately get what this site is about.
+
+The implementation maps Viridis colors to specific UI elements:
+
+```scss
+/*-- scss:defaults --*/
+$primary: #440154;          // Viridis dark purple
+$link-color: #1f9e89;       // Viridis teal
+
+/*-- scss:rules --*/
+.navbar {
+  background: linear-gradient(135deg, #440154, #31688e) !important;
+}
+```
+
+The navbar uses a purple-to-teal gradient, links are teal with yellow-green hover states, and the footer carries the dark purple. Category badges pick up the mid-range teal. The result is a cohesive palette derived entirely from a single colormap — no design skills required, just an appreciation for good defaults.
+
 ### OG images with a personal touch
 
 When you share a blog post on X or Slack, the preview card is the first thing people see. I wanted each post to have a distinct card rather than a generic default, but I also didn't want to manually design one for every article.
