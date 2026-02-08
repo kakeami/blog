@@ -95,11 +95,132 @@
 <h3 class="anchored" data-anchor-id="comments-with-giscus">Comments with giscus</h3>
 <p>Quarto has built-in support for <a href="https://giscus.app/">giscus</a>, a comment system powered by GitHub Discussions. A few lines of YAML in <code>_quarto.yml</code> and every post gets a comment widget — no JavaScript snippets to paste, no third-party accounts to manage. Readers authenticate with their GitHub account, which is a reasonable assumption for a data science audience. Comments are stored as GitHub Discussions threads, so they’re searchable, support Markdown, and won’t disappear if I ever switch hosting providers.</p>
 </section>
+<section id="google-analytics-in-one-line" class="level3">
+<h3 class="anchored" data-anchor-id="google-analytics-in-one-line">Google Analytics in one line</h3>
+<p>Quarto has native Google Analytics support. No script tags to paste, no template modifications — just one line in <code>_quarto.yml</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">website</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb1-2"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">google-analytics</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"G-XXXXXXXXXX"</span></span></code></pre></div></div>
+<p>Quarto auto-detects whether you’re using GA4 (<code>G-</code> prefix) or the legacy Universal Analytics (<code>UA-</code> prefix) and generates the appropriate tracking code. The measurement ID is public by design — it’s embedded in every page’s HTML, so there’s no security concern about committing it to a public repository.</p>
+</section>
+<section id="viridis-themed-design-with-scss" class="level3">
+<h3 class="anchored" data-anchor-id="viridis-themed-design-with-scss">Viridis-themed design with SCSS</h3>
+<p>Quarto ships with 25 <a href="https://bootswatch.com/">Bootswatch</a> themes, and any of them can be extended with custom SCSS. I started with the <code>cosmo</code> theme and layered a custom stylesheet on top:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">format</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb2-2"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">  </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">html</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb2-3"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">    </span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span></span>
+<span id="cb2-4"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">      </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> cosmo</span></span>
+<span id="cb2-5"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">      </span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">-</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> custom.scss</span></span></code></pre></div></div>
+<p>For the color scheme, I chose <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">Viridis</a> — the perceptually uniform colormap that’s ubiquitous in data visualization. It felt fitting for a data viz blog: readers who recognize it will immediately get what this site is about.</p>
+<p>The implementation maps Viridis colors to specific UI elements:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/*-- scss:defaults --*/</span></span>
+<span id="cb3-2"><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$primary</span>: <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#440154</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span>          <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// Viridis dark purple</span></span>
+<span id="cb3-3"><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$link-color</span>: <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#1f9e89</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span>       <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// Viridis teal</span></span>
+<span id="cb3-4"></span>
+<span id="cb3-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/*-- scss:rules --*/</span></span>
+<span id="cb3-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">.navbar</span> {</span>
+<span id="cb3-7">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">background</span>: <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">linear-gradient(</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">135</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">deg</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#440154</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">#31688e</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">)</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">!important</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-8">}</span></code></pre></div></div>
+<p>The navbar uses a purple-to-teal gradient, links are teal with yellow-green hover states, and the footer carries the dark purple. Category badges pick up the mid-range teal. The result is a cohesive palette derived entirely from a single colormap — no design skills required, just an appreciation for good defaults.</p>
+</section>
 <section id="og-images-with-a-personal-touch" class="level3">
 <h3 class="anchored" data-anchor-id="og-images-with-a-personal-touch">OG images with a personal touch</h3>
 <p>When you share a blog post on X or Slack, the preview card is the first thing people see. I wanted each post to have a distinct card rather than a generic default, but I also didn’t want to manually design one for every article.</p>
 <p>The solution was a small Python script (<a href="https://github.com/kakeami/blog/blob/main/scripts/generate_og.py"><code>generate_og.py</code></a>) that takes the blog’s cat icon, crops it into a circle, and places it on a pastel background. The key trick: the background color is derived from each post’s directory name via MD5 hash, mapped to the HSL color space with fixed saturation and lightness. This means every post gets a unique but consistently gentle color, and the same post always produces the same image — no randomness, no manual color picking.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="kw" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">def</span> slug_to_pastel(slug: <span class="bu" style="color: null;
@@ -115,14 +236,14 @@ background-color: null;
 font-style: inherit;">int</span>, <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">int</span>]:</span>
-<span id="cb1-2">    hv <span class="op" style="color: #5E5E5E;
+<span id="cb4-2">    hv <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">int</span>(hashlib.md5(slug.encode()).hexdigest(), <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">16</span>)</span>
-<span id="cb1-3">    hue <span class="op" style="color: #5E5E5E;
+<span id="cb4-3">    hue <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> (hv <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -133,14 +254,14 @@ background-color: null;
 font-style: inherit;">/</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">360.0</span></span>
-<span id="cb1-4">    r, g, b <span class="op" style="color: #5E5E5E;
+<span id="cb4-4">    r, g, b <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> colorsys.hls_to_rgb(hue, <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.88</span>, <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.40</span>)</span>
-<span id="cb1-5">    <span class="cf" style="color: #003B4F;
+<span id="cb4-5">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> (<span class="bu" style="color: null;
@@ -164,7 +285,7 @@ background-color: null;
 font-style: inherit;">255</span>))</span></code></pre></div></div>
 <p>The circle cropping required some care. My icon isn’t transparent — it’s a black line drawing on a white background. The script places the source image on a canvas sized to fit the full circle, applies a circular mask, then scales and centers the result on a 1200×630 background. The circle center is shifted slightly upward so the cat’s ears sit comfortably inside while the clothing is naturally clipped at the bottom.</p>
 <p>Quarto’s <code>open-graph</code> and <code>twitter-card</code> configuration in <code>_quarto.yml</code> handles the meta tags, and each post’s <code>image</code> field in the front matter points to its generated <code>og-image.png</code>. The whole workflow for a new post is just:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">python</span> scripts/generate_og.py</span></code></pre></div></div>
 <p>Later, when posts include data visualizations, I plan to replace these generated images with actual chart screenshots — but having a consistent fallback from day one means every post looks intentional when shared.</p>
