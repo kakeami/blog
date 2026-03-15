@@ -3,6 +3,9 @@ private/
 .claude/
 CLAUDE.md
 
+# === Post data (sensitive, not for public repo) ===
+posts/*/data/
+
 # === Python ===
 .venv/
 __pycache__/
